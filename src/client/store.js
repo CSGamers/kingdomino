@@ -1,19 +1,19 @@
-/**
- * ************************************
- *
- * @module  store.js
- * @author
- * @date
- * @description Redux 'single source of truth'
- *
- * ************************************
- */
+// /**
+//  * ************************************
+//  *
+//  * @module  store.js
+//  * @author
+//  * @date
+//  * @description Redux 'single source of truth'
+//  *
+//  * ************************************
+//  */
 
- import { createStore } from 'redux';
- import { composeWithDevTools } from 'redux-devtools-extension';
- import reducers from './reducers/reducers';
- import * as actions from './actions/actions';
+// import { createStore } from "redux";
+// import { composeWithDevTools } from "redux-devtools-extension";
+// //  import reducers from './reducers/reducers';
+// //  import * as actions from './actions/actions';
 
- const store = createStore(reducers, composeWithDevTools());
+// const store = createStore(reducers, composeWithDevTools());
 
-export default store;
+// export default store;
