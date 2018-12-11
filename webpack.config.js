@@ -14,7 +14,14 @@ module.exports = {
         test: /\.(js)$/,
         use: "babel-loader"
       },
-      { test: /\.(css)$/, use: ["style-loader", "css-loader"] }
+      { 
+        test: /\.(css)$/, 
+        use: ["style-loader", "css-loader"] 
+      },
+      {
+        test: /\.(jpe?g|png|gif)$/,
+        use: [{ loader: 'file-loader?name=img/[name]__[hash:base64:5].[ext]' }],
+      }
     ]
   },
   mode: "development",

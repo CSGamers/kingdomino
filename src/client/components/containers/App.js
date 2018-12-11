@@ -21,9 +21,9 @@ class App extends Component {
     return (
       <div id="app">
         <Board />
-        <Piece contents={['1a', '1b']} id="P1" />
+        <Piece contents={['44a', '44b']} id="P1" />
       </div>
-    );
+    )
   }
 }
 
