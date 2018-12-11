@@ -6,7 +6,17 @@ const initialState = {
   unusedPieces: [],
   currPieces: [],
   nextPieces: [],
-  board: [
+  currPlayer: '',
+  board1: [
+    {}, {}, {}, {}, {}, {}, {},
+    {}, {}, {}, {}, {}, {}, {},
+    {}, {}, {}, {}, {}, {}, {},
+    {}, {}, {}, {}, {}, {}, {},
+    {}, {}, {}, {}, {}, {}, {},
+    {}, {}, {}, {}, {}, {}, {},
+    {}, {}, {}, {}, {}, {}, {},
+  ],
+  board2: [
     {}, {}, {}, {}, {}, {}, {},
     {}, {}, {}, {}, {}, {}, {},
     {}, {}, {}, {}, {}, {}, {},
@@ -31,6 +41,28 @@ const initialState = {
           ...state,
           board: newBoard,
         }
+      }
+
+      case types.SHUFFLE_PIECES: {
+        console.log('action', action);
+
+        const nums = Array.apply(null, {length: 49}).map(Number.call, Number);
+
+        function shuffle(a) {
+          for (let i = a.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [a[i], a[j]] = [a[j], a[i]];
+          }
+          return a;
+        }
+        
+        const shuffledNums = shuffle(nums);
+
+        return {
+          ...state,
+          unusedPieces: shuffledNums,
+        }
+
       }
 
       default: 

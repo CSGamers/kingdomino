@@ -9,14 +9,20 @@ const mapStateToProps = store => ({
   store
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+  shufflePieces: () => {
+    dispatch(actions.shufflePieces());
+  },
+});
 
 class App extends Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.props.shufflePieces();
+  }
 
   render() {
     return (
