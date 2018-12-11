@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Board from "../display/Board";
+import { Draggable, Droppable } from "react-drag-and-drop";
 // import { connect } from "react-redux";
 // import * as actions from '../../actions/actions';
 
