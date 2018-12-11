@@ -15,4 +15,5 @@
   height: 52;
   display: inline-block;
   background-color: aquamarine;
+  border: 1px solid black;
 }

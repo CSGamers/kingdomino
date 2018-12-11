@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Board from "../display/Board";
-import Piece from "../display/Piece";
+
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 
@@ -21,7 +21,6 @@ class App extends Component {
     return (
       <div id="app">
         <Board />
-        <Piece contents={["1a", "1b"]} id="P1" />
       </div>
     );
   }
