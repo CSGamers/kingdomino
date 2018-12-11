@@ -20,6 +20,6 @@ module.exports = {
   mode: "development",
   plugins: [
     new CleanWebPackPlugin([build]),
-    new HtmlWebpackPlugin({ template: "./src/app/index.html" })
+    new HtmlWebpackPlugin({ template: "./src/client/index.html" })
   ]
 };
