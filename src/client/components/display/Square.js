@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 
-// const mapStateToProps = store => ({
-//   store
-// });
+const mapStateToProps = store => ({
+  store
+});
 
-// const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({});
 
-export default class Square extends Component {
+class Square extends Component {
   constructor(props) {
     super(props);
   }
@@ -20,7 +20,7 @@ export default class Square extends Component {
   }
 }
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps,
-// )(Square);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Square);
