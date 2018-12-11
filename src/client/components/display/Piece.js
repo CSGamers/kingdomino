@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import Square from "./Square";
 import { DragSource, DropTarget } from "react-dnd";
+import DOMINOS from "../../DOMINOS.json";
 
 const mapStateToProps = store => ({
   store
@@ -27,9 +28,9 @@ const itemSource = {
   }
 };
 
-function collect(connect, monitor) {
+function collect(conn, monitor) {
   return {
-    connectDragSource: connect.dragSource(),
+    connectDragSource: conn.dragSource(),
     isDragging: monitor.isDragging()
   };
 }
@@ -53,18 +54,23 @@ class Piece extends Component {
   render() {
     const { isDragging, connectDragSource } = this.props;
     return connectDragSource(
-      <div
-        className="piece"
-        onClick={this.rotateHandler}
-        style={{ transform: `rotate(${this.state.rotate}deg)` }}
-      >
-        PIECE
+      // return (
+      <div className="piece">
+        <Square
+          id={this.props.contents[0]}
+          contents={DOMINOS[this.props.contents[0]]}
+        />
+        <Square
+          id={this.props.contents[1]}
+          contents={DOMINOS[this.props.contents[1]]}
+        />
       </div>
     );
   }
 }
 
 Piece = DragSource(Types.ITEM, itemSource, collect)(Piece);
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps

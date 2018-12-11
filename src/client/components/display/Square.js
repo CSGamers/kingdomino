@@ -12,6 +12,7 @@ function collect(connect, monitor) {
     connectDropTarget: connect.dropTarget()
   };
 }
+import Crown from "./Crown";
 
 const mapStateToProps = store => ({
   store
@@ -28,14 +29,35 @@ class Square extends Component {
 
   render() {
     const { connectDropTarget } = this.props;
-    return connectDropTarget(
-      <div className="square" id={this.props.id} key={this.props.key} />
+
+    let styles = {
+      backgroundColor: this.props.contents.color
+    };
+    let crowns = [];
+
+    if (this.props.contents.crowns) {
+      for (let i = 0; i < this.props.contents.crowns; i++) {
+        crowns.push(<Crown key={i} />);
+      }
+    }
+
+    // return connectDropTarget(
+    return (
+      <div
+        className="square"
+        id={this.props.id}
+        key={this.props.key}
+        style={styles}
+      >
+        {crowns}
+      </div>
     );
   }
 }
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(Square);
-export default DropTarget(Types.ITEM, {}, collect)(Square);
+// Square = DropTarget(Types.ITEM, {}, collect)(Square);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Square);

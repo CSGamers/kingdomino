@@ -7,7 +7,7 @@ import { DragDropContext } from "react-dnd";
 import Piece from "../display/Piece";
 
 const mapStateToProps = store => ({
-  store
+  board: store.game.board
 });
 
 const mapDispatchToProps = dispatch => ({});
@@ -22,19 +22,19 @@ class Board extends Component {
   render() {
     let squares = [];
     for (let i = 0; i < 49; i++) {
-      squares.push(<Square id={i} key={i} />);
+      squares.push(<Square id={i} key={i} contents={this.props.board[i]} />);
     }
     return (
-      <div className="board">
-        {squares}
-        <Piece contents={["1a", "1b"]} id="P1" />
+      <div>
+        <div className="board">{squares}</div>
+        <Piece contents={["44a", "44b"]} id="P1" />
       </div>
     );
   }
 }
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(Board);
-export default DragDropContext(HTML5Backend)(Board);
+Board = DragDropContext(HTML5Backend)(Board);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Board);
