@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import Square from "./Square";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
-import HTML5Backend from "react-dnd-html5-backend";
-import { DragDropContext } from "react-dnd";
-import Piece from "../display/Piece";
 
 const mapStateToProps = store => ({
-  board1: store.game.board1
+  board: store.game.board
 });
 
 const mapDispatchToProps = dispatch => ({});
@@ -26,14 +23,13 @@ class Board extends Component {
     }
     return (
       <div>
+        <h2>{`Player ${this.props.id}`}</h2>
         <div className="board">{squares}</div>
-        <Piece contents={["44a", "44b"]} id="P1" />
       </div>
     );
   }
 }
 
-Board = DragDropContext(HTML5Backend)(Board);
 export default connect(
   mapStateToProps,
   mapDispatchToProps

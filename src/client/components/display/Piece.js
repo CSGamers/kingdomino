@@ -2,38 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import Square from "./Square";
-import { DragSource, DropTarget } from "react-dnd";
 import DOMINOS from "../../DOMINOS.json";
 
 const mapStateToProps = store => ({
   store
 });
-
-const Types = {
-  ITEM: "piece"
-};
-
-const itemSource = {
-  beginDrag(props) {
-    const item = { id: props.id };
-    console.log(props);
-    return item;
-  },
-  endDrag(props, monitor) {
-    const drag = monitor.getItem();
-    const drop = monitor.getDropResult();
-
-    const coord = monitor.getInitialSourceClientOffset();
-    console.log(monitor, drag, coord);
-  }
-};
-
-function collect(conn, monitor) {
-  return {
-    connectDragSource: conn.dragSource(),
-    isDragging: monitor.isDragging()
-  };
-}
 
 const mapDispatchToProps = dispatch => ({});
 

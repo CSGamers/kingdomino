@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Board from "../display/Board";
 import Piece from "../display/Piece";
-
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
+import CurrContainer from "../containers/CurrContainer";
+import NextContainer from "../containers/NextContainer";
 
 const mapStateToProps = store => ({
   store
@@ -27,8 +28,11 @@ class App extends Component {
   render() {
     return (
       <div id="app">
-        <Board />
-        {/* <Piece contents={["44a", "44b"]} id="P1" /> */}
+        <Board id={1} />
+
+        <CurrContainer />
+        <NextContainer />
+        <Board id={2} />
       </div>
     );
   }

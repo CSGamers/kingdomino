@@ -25,3 +25,8 @@
   background-color: aquamarine;
   border: 1px solid black;
 }
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
