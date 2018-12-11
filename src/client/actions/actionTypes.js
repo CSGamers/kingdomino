@@ -1,1 +1,3 @@
 export const PLACE_PIECE = 'PLACE_PIECE';
+export const SHUFFLE_PIECES = 'SHUFFLE_PIECES';
+export const TAKE_4_PIECES = 'TAKE_4_PIECES';

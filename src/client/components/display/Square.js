@@ -2,18 +2,34 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import { DropTarget } from "react-dnd";
-
-const Types = {
-  ITEM: "piece"
-};
-
-function collect(connect, monitor) {
-  return {
-    connectDropTarget: connect.dropTarget()
-  };
-}
 import Crown from "./Crown";
 
+const Types = {
+  PIECE: "piece"
+};
+
+const squareTarget = {
+  canDrop (props) {
+    const {canMovePiece, position: {x, y}} = props
+    return canMovePiece(x, y)
+  },
+
+  drop (props) {
+    const {movePiece, position: {x, y}} = props
+    movePiece(x, y)
+  }
+}
+
+function collect (connect, monitor) {
+  const info = {
+    connectDropTarget: connect.dropTarget(),
+    isOver: monitor.isOver(),
+    canDrop: monitor.canDrop()
+  }
+
+  return info
+}
+  
 const mapStateToProps = store => ({
   store
 });
@@ -53,9 +69,9 @@ class Square extends Component {
       </div>
     );
   }
-}
+} 
 
-// Square = DropTarget(Types.ITEM, {}, collect)(Square);
+Square = DropTarget(Types.PIECE, {}, collect)(Square);
 
 export default connect(
   mapStateToProps,
