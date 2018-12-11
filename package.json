@@ -37,10 +37,14 @@
     "nodemon": "^1.18.8",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-redux": "^6.0.0",
     "redux": "^4.0.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
+  },
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.7"
   }
 }
