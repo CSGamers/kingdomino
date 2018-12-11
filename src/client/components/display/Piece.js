@@ -1,17 +1,14 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../../actions/actions';
-import Square from './Square';
-import DOMINOS from '../../DOMINOS.json';
-
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as actions from "../../actions/actions";
+import Square from "./Square";
+import DOMINOS from "../../DOMINOS.json";
 
 const mapStateToProps = store => ({
-  store,
+  store
 });
 
-const mapDispatchToProps = dispatch => ({
-
-});
+const mapDispatchToProps = dispatch => ({});
 
 class Piece extends Component {
   constructor(props) {
@@ -23,8 +20,14 @@ class Piece extends Component {
   render() {
     return (
       <div className="piece">
-        <Square id={this.props.contents[0]} contents={DOMINOS[this.props.contents[0]]} />
-        <Square id={this.props.contents[1]} contents={DOMINOS[this.props.contents[1]]} />
+        <Square
+          id={this.props.contents[0]}
+          contents={DOMINOS[this.props.contents[0]]}
+        />
+        <Square
+          id={this.props.contents[1]}
+          contents={DOMINOS[this.props.contents[1]]}
+        />
       </div>
     );
   }
@@ -32,5 +35,5 @@ class Piece extends Component {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(Piece);
