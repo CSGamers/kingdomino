@@ -1,0 +1,386 @@
+{
+  "1a" : {
+    "color" : "yellow",
+    "crowns" : 0
+  },
+  "1b" : {
+    "color" : "yellow",
+    "crowns" : 0
+  },
+  "2a" : {
+    "color" : "yellow",
+    "crowns" : 0
+  },
+  "2b" : {
+    "color" : "yellow",
+    "crowns" : 0
+  }, 
+  "3a" : {
+    "color" : "grn",
+    "crowns" : 0
+  },
+  "3b" : {
+    "color" : "grn",
+    "crowns" : 0
+  }, 
+  "4a" : {
+    "color" : "grn",
+    "crowns" : 0
+  },
+  "4b" : {
+    "color" : "grn",
+    "crowns" : 0
+  }, 
+  "5a" : {
+    "color" : "grn",
+    "crowns" : 0
+  },
+  "5b" : {
+    "color" : "grn",
+    "crowns" : 0
+  }, 
+  "6a" : {
+    "color" : "grn",
+    "crowns" : 0
+  },
+  "6b" : {
+    "color" : "grn",
+    "crowns" : 0
+  }, 
+  "7a" : {
+    "color" : "blue",
+    "crowns" : 0
+  },
+  "7b" : {
+    "color" : "blue",
+    "crowns" : 0
+  }, 
+  "8a" : {
+    "color" : "blue",
+    "crowns" : 0
+  },
+  "8b" : {
+    "color" : "blue",
+    "crowns" : 0
+  }, 
+  "9a" : {
+    "color" : "blue",
+    "crowns" : 0
+  },
+  "9b" : {
+    "color" : "blue",
+    "crowns" : 0
+  }, 
+  "10a" : {
+    "color" : "lt-grn",
+    "crowns" : 0
+  },
+  "10b" : {
+    "color" : "lt-grn",
+    "crowns" : 0
+  }, 
+  "11a" : {
+    "color" : "lt-grn",
+    "crowns" : 0
+  },
+  "11b" : {
+    "color" : "lt-grn",
+    "crowns" : 0
+  }, 
+  "12a" : {
+    "color" : "tan",
+    "crowns" : 0
+  },
+  "12b" : {
+    "color" : "tan",
+    "crowns" : 0
+  }, 
+  "13a" : {
+    "color" : "yellow",
+    "crowns" : 0
+  },
+  "13b" : {
+    "color" : "grn",
+    "crowns" : 0
+  }, 
+  "14a" : {
+    "color" : "yellow",
+    "crowns" : 0
+  },
+  "14b" : {
+    "color" : "blue",
+    "crowns" : 0
+  }, 
+  "15a" : {
+    "color" : "yellow",
+    "crowns" : 0
+  },
+  "15b" : {
+    "color" : "lt-grn",
+    "crowns" : 0
+  }, 
+  "16a" : {
+    "color" : "yellow",
+    "crowns" : 0
+  },
+  "16b" : {
+    "color" : "tan",
+    "crowns" : 0
+  }, 
+  "17a" : {
+    "color" : "grn",
+    "crowns" : 0
+  },
+  "17b" : {
+    "color" : "blue",
+    "crowns" : 0
+  }, 
+  "18a" : {
+    "color" : "grn",
+    "crowns" : 0
+  },
+  "18b" : {
+    "color" : "lt-grn",
+    "crowns" : 0
+  }, 
+  "19a" : {
+    "color" : "yellow",
+    "crowns" : 1
+  },
+  "19b" : {
+    "color" : "grn",
+    "crowns" : 0
+  }, 
+  "20a" : {
+    "color" : "yellow",
+    "crowns" : 1
+  },
+  "20b" : {
+    "color" : "blue",
+    "crowns" : 0
+  }, 
+  "21a" : {
+    "color" : "yellow",
+    "crowns" : 1
+  },
+  "21b" : {
+    "color" : "lt-grn",
+    "crowns" : 0
+  }, 
+  "22a" : {
+    "color" : "yellow",
+    "crowns" : 1
+  },
+  "22b" : {
+    "color" : "tan",
+    "crowns" : 0
+  }, 
+  "23a" : {
+    "color" : "yellow",
+    "crowns" : 1
+  },
+  "23b" : {
+    "color" : "brown",
+    "crowns" : 0
+  }, 
+  "24a" : {
+    "color" : "grn",
+    "crowns" : 1
+  },
+  "24b" : {
+    "color" : "yellow",
+    "crowns" : 0
+  }, 
+  "25a" : {
+    "color" : "grn",
+    "crowns" : 1
+  },
+  "25b" : {
+    "color" : "yellow",
+    "crowns" : 0
+  }, 
+  "26a" : {
+    "color" : "grn",
+    "crowns" : 1
+  },
+  "26b" : {
+    "color" : "yellow",
+    "crowns" : 0
+  }, 
+  "27a" : {
+    "color" : "grn",
+    "crowns" : 1
+  },
+  "27b" : {
+    "color" : "yellow",
+    "crowns" : 0
+  }, 
+  "28a" : {
+    "color" : "grn",
+    "crowns" : 1
+  },
+  "28b" : {
+    "color" : "blue",
+    "crowns" : 0
+  }, 
+  "29a" : {
+    "color" : "grn",
+    "crowns" : 1
+  },
+  "29b" : {
+    "color" : "lt-grn",
+    "crowns" : 0
+  }, 
+  "30a" : {
+    "color" : "blue",
+    "crowns" : 1
+  },
+  "30b" : {
+    "color" : "yellow",
+    "crowns" : 0
+  }, 
+  "31a" : {
+    "color" : "blue",
+    "crowns" : 1
+  },
+  "31b" : {
+    "color" : "yellow",
+    "crowns" : 0
+  }, 
+  "32a" : {
+    "color" : "blue",
+    "crowns" : 1
+  },
+  "32b" : {
+    "color" : "grn",
+    "crowns" : 0
+  }, 
+  "33a" : {
+    "color" : "blue",
+    "crowns" : 1
+  },
+  "33b" : {
+    "color" : "grn",
+    "crowns" : 0
+  }, 
+  "34a" : {
+    "color" : "blue",
+    "crowns" : 1
+  },
+  "34b" : {
+    "color" : "grn",
+    "crowns" : 0
+  }, 
+  "35a" : {
+    "color" : "blue",
+    "crowns" : 1
+  },
+  "35b" : {
+    "color" : "grn",
+    "crowns" : 0
+  }, 
+  "36a" : {
+    "color" : "yellow",
+    "crowns" : 0
+  },
+  "36b" : {
+    "color" : "lt-grn",
+    "crowns" : 1
+  }, 
+  "37a" : {
+    "color" : "blue",
+    "crowns" : 0
+  },
+  "37b" : {
+    "color" : "lt-grn",
+    "crowns" : 1
+  }, 
+  "38a" : {
+    "color" : "yellow",
+    "crowns" : 0
+  },
+  "38b" : {
+    "color" : "tan",
+    "crowns" : 1
+  }, 
+  "39a" : {
+    "color" : "lt-grn",
+    "crowns" : 0
+  },
+  "39b" : {
+    "color" : "tan",
+    "crowns" : 1
+  }, 
+  "40a" : {
+    "color" : "brown",
+    "crowns" : 1
+  },
+  "40b" : {
+    "color" : "yellow",
+    "crowns" : 0
+  }, 
+  "41a" : {
+    "color" : "yellow",
+    "crowns" : 0
+  },
+  "41b" : {
+    "color" : "lt-grn",
+    "crowns" : 2
+  }, 
+  "42a" : {
+    "color" : "blue",
+    "crowns" : 0
+  },
+  "42b" : {
+    "color" : "lt-grn",
+    "crowns" : 2
+  }, 
+  "43a" : {
+    "color" : "yellow",
+    "crowns" : 0
+  },
+  "43b" : {
+    "color" : "tan",
+    "crowns" : 2
+  }, 
+  "44a" : {
+    "color" : "lt-grn",
+    "crowns" : 0
+  },
+  "44b" : {
+    "color" : "tan",
+    "crowns" : 2
+  }, 
+  "45a" : {
+    "color" : "brown",
+    "crowns" : 2
+  },
+  "45b" : {
+    "color" : "yellow",
+    "crowns" : 0
+  }, 
+  "46a" : {
+    "color" : "tan",
+    "crowns" : 0
+  },
+  "46b" : {
+    "color" : "brown",
+    "crowns" : 2
+  }, 
+  "47a" : {
+    "color" : "tan",
+    "crowns" : 0
+  },
+  "47b" : {
+    "color" : "brown",
+    "crowns" : 2
+  }, 
+  "48a" : {
+    "color" : "yellow",
+    "crowns" : 0
+  },
+  "48b" : {
+    "color" : "brown",
+    "crowns" : 3
+  }
+}
