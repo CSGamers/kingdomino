@@ -1,11 +1,13 @@
-const React = require("react");
-const ReactDOM = require("react-dom");
-require("./index.css");
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import App from './components/containers/App.js';
+import store from './store';
 
-class App extends React.Component {
-  render() {
-    return <div>REACT TESTING</div>;
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById("root"));
+render(
+  // wrap the App in the Provider and pass in the store
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'),
+);
