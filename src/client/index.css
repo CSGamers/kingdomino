@@ -24,3 +24,8 @@
   overflow: hidden;
   background-color: aquamarine;
 }
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

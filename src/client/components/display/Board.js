@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import Square from "./Square";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
-import { Stream } from "stream";
 
 const mapStateToProps = store => ({
-  board: store.game.board,
+  board: store.game.board
 });
 
 const mapDispatchToProps = dispatch => ({});
@@ -22,11 +21,16 @@ class Board extends Component {
     for (let i = 0; i < 49; i++) {
       squares.push(<Square id={i} key={i} contents={this.props.board[i]} />);
     }
-    return <div className="board">{squares}</div>;
+    return (
+      <div>
+        <h2>{`Player ${this.props.id}`}</h2>
+        <div className="board">{squares}</div>
+      </div>
+    );
   }
 }
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(Board);
