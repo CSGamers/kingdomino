@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../../actions/actions';
+import React, { Component } from "react";
+import Board from "../display/Board";
+// import { connect } from "react-redux";
+// import * as actions from '../../actions/actions';
 
+// const mapStateToProps = store => ({
+//   store
+// });
 
-const mapStateToProps = store => ({
-  store,
-});
+// const mapDispatchToProps = dispatch => ({});
 
-const mapDispatchToProps = dispatch => ({
-
-});
-
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
   }
@@ -21,14 +19,13 @@ class App extends Component {
   render() {
     return (
       <div id="app">
-
+        <Board />
       </div>
     );
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(App);
-
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(App);

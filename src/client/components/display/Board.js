@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../../actions/actions';
+import React, { Component } from "react";
+import Square from "./Square";
+// import { connect } from "react-redux";
+// import * as actions from "../../actions/actions";
 
+// const mapStateToProps = store => ({
+//   store
+// });
 
-const mapStateToProps = store => ({
-  store,
-});
+// const mapDispatchToProps = dispatch => ({});
 
-const mapDispatchToProps = dispatch => ({
-
-});
-
-class Board extends Component {
+export default class Board extends Component {
   constructor(props) {
     super(props);
   }
@@ -19,15 +17,15 @@ class Board extends Component {
   componentDidMount() {}
 
   render() {
-    return (
-      <div className="board">
-
-      </div>
-    );
+    let squares = [];
+    for (let i = 0; i < 49; i++) {
+      squares.push(<Square id={i} key={i} />);
+    }
+    return <div className="board">{squares}</div>;
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Board);
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps,
+// )(Board);
