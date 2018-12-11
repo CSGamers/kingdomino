@@ -9,3 +9,10 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.piece {
+  width: 104;
+  height: 52;
+  display: inline-block;
+  background-color: aquamarine;
+}

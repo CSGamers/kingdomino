@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/actions';
+import Square from './Square';
 
 
 const mapStateToProps = store => ({
@@ -20,8 +21,9 @@ class Piece extends Component {
 
   render() {
     return (
-      <div className="square">
-
+      <div className="piece">
+        <Square id={this.props.contents[0]} />
+        <Square id={this.props.contents[1]} />
       </div>
     );
   }
