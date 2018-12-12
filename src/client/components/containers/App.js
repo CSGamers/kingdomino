@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import CurrContainer from "../containers/CurrContainer";
 import NextContainer from "../containers/NextContainer";
+import NextPiece from "./NextPiece";
 
 const mapStateToProps = store => ({
   boards: store.game.boards
@@ -34,10 +35,11 @@ class App extends Component {
     return (
       <div id="app">
         <Board id={1} contents={this.props.boards.board1}/>
-
-        <CurrContainer />
-        <NextContainer />
-
+        <div className="controls">
+          <CurrContainer />
+          <NextContainer />
+          <NextPiece />
+        </div>
         <Board id={2} contents={this.props.boards.board2} />
 
       </div>

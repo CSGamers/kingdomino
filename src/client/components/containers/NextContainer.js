@@ -16,12 +16,16 @@ const mapDispatchToProps = dispatch => ({
   },
   populateNext: () => {
     dispatch(actions.populateNext());
+  },
+  chooseStartingPlayer: () => {
+    dispatch(actions.chooseStartingPlayer());
   }
 });
 
 function dealPieces() {
   this.props.populateCurr();
   this.props.populateNext();
+  this.props.chooseStartingPlayer();
 }
 
 class NextContainer extends Component {
@@ -36,7 +40,7 @@ class NextContainer extends Component {
     })
 
     return (
-      <div>
+      <div className="nextContainer">
         <h2>Next Pieces</h2>
           {next4}
           <Next4Btn dealPieces={dealPieces.bind(this)}/>

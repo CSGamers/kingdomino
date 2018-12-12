@@ -19,3 +19,13 @@ export const populateCurr = nextPieces => ({
   type: types.POPULATE_CURR,
   payload: nextPieces
 })
+
+export const queuePiece = queuePiece => ({
+  type: types.QUEUE_PIECE,
+  payload: queuePiece
+})
+
+export const chooseStartingPlayer = currPlayer => ({
+  type: types.CHOOSE_STARTING_PLAYER,
+  payload: currPlayer
+})

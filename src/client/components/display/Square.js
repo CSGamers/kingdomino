@@ -57,12 +57,7 @@ class Square extends Component {
     }
 
     return (
-      <div
-        className="square"
-        id={this.props.id}
-        key={this.props.key}
-        style={styles}
-      >
+      <div className="square" id={this.props.id} key={this.props.key} style={styles} >
         {crowns}
       </div>
     );

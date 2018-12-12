@@ -7,6 +7,7 @@ const initialState = {
   currPieces: [],
   nextPieces: [],
   currPlayer: '',
+  pieceToPlay: [],
   boards: {
     board1: [
       {}, {}, {}, {}, {}, {}, {},
@@ -89,6 +90,29 @@ const initialState = {
           ...state,
           currPieces: state.nextPieces,
           nextPieces: [],
+        }
+      }
+
+      case types.QUEUE_PIECE: {
+        console.log('action', action);
+
+        let currPieces = state.currPieces.slice();
+        let pieceToPlay = currPieces.shift();
+
+        return {
+          ...state,
+          currPieces: currPieces,
+          pieceToPlay: pieceToPlay
+        }
+      }
+
+      case types.CHOOSE_STARTING_PLAYER: {
+        console.log('action', action);
+        let rand = Math.floor(Math.random() * Math.floor(2) + 1);
+
+        return {
+          ...state,
+          currPlayer: rand,
         }
       }
 
