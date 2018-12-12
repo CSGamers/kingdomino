@@ -1,6 +1,7 @@
 const dbUri = 'postgres://nfqxgbem:22Y05ReHjKco1ky_s8ZkAwjZ_r-XigMW@pellefant.db.elephantsql.com:5432/nfqxgbem';
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize(dbUri);
+const userController = {}
 
 sequelize.authenticate().then(() => {
   console.log('Connected to database');
@@ -9,21 +10,27 @@ sequelize.authenticate().then(() => {
 });
 
 const User = sequelize.define('users', {
-  _id:{
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    automIncrement: true
-  },
   userName: {
     type: Sequelize.STRING,
     unique: true
   },
   password: Sequelize.STRING
-});
+}, { timestamps: false });
 
-User.create({
-  userName: req.userName,
-  password: password
-}, () => {
-  console.log('it reached');
-});
+userController.createUser = (req, res, next) => {
+  console.log('This is the body', req.body);
+  User.create({
+    userName: req.body.userName,
+    password: req.body.password
+  }).then(response => {
+    res.locals.user = response;
+    next();
+  }).catch(err => {
+    console.log(err);
+  });
+}
+
+module.exports = {
+  userController,
+  User
+};
