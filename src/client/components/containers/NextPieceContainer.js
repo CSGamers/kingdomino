@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Piece from "../display/Piece";
+import NextPiece from "../display/NextPiece";
 import { connect } from "react-redux";
 import Next4Btn from '../display/Next4Btn';
 import * as actions from "../../actions/actions";
@@ -13,24 +13,19 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  // populateCurr: () => {
-  //   dispatch(actions.populateCurr());
-  // },
-  // populateNext: () => {
-  //   dispatch(actions.populateNext());
-  // }
+
 });
 
-class NextPiece extends Component {
+class NextPieceContainer extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
 
-    let num = this.props.pieceToPlay;
+    let num = this.props.pieceToPlay.piece;
     let piece;
-    if (num>0) piece = <Piece contents={[`${num}a`, `${num}b`]} id={`P${num}`} key={`P${num}`} />
+    if (num>0) piece = <NextPiece contents={[`${num}a`, `${num}b`]} id={`P${num}`} key={`P${num}`} />
 
     return (
       <div>
@@ -47,4 +42,4 @@ class NextPiece extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NextPiece);
+)(NextPieceContainer);

@@ -17,15 +17,11 @@ const mapDispatchToProps = dispatch => ({
   populateNext: () => {
     dispatch(actions.populateNext());
   },
-  chooseStartingPlayer: () => {
-    dispatch(actions.chooseStartingPlayer());
-  }
 });
 
 function dealPieces() {
   this.props.populateCurr();
   this.props.populateNext();
-  this.props.chooseStartingPlayer();
 }
 
 class NextContainer extends Component {

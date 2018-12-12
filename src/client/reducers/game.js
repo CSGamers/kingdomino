@@ -7,7 +7,7 @@ const initialState = {
   currPieces: [],
   nextPieces: [],
   currPlayer: '',
-  pieceToPlay: [],
+  pieceToPlay: { piece: 0, orientation: 'horizontal' },
   boards: {
     board1: [
       {}, {}, {}, {}, {}, {}, {},
@@ -97,7 +97,8 @@ const initialState = {
         console.log('action', action);
 
         let currPieces = state.currPieces.slice();
-        let pieceToPlay = currPieces.shift();
+        let pieceToPlay = JSON.parse(JSON.stringify(state.pieceToPlay));
+        pieceToPlay.piece = currPieces.shift();
 
         return {
           ...state,
@@ -105,6 +106,18 @@ const initialState = {
           pieceToPlay: pieceToPlay
         }
       }
+
+      case types.CHANGE_ORIENTATION: {
+        console.log('action', action);
+
+        let pieceToPlay = JSON.parse(JSON.stringify(state.pieceToPlay));
+        pieceToPlay.orientation === 'horizontal' ? pieceToPlay.orientation = 'vertical' : pieceToPlay.orientation = 'horizontal';
+
+        return {
+          ...state,
+          pieceToPlay: pieceToPlay
+        }
+      }      
 
       case types.CHOOSE_STARTING_PLAYER: {
         console.log('action', action);
