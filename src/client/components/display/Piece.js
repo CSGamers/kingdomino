@@ -13,12 +13,20 @@ const mapDispatchToProps = dispatch => ({});
 class Piece extends Component {
   constructor(props) {
     super(props);
+    this.state = { rotate: 0 };
+    this.rotateHandler = this.rotateHandler.bind(this);
   }
 
   componentDidMount() {}
 
+  rotateHandler() {
+    let circ = this.state.rotate + 90;
+    this.setState({ rotate: circ });
+  }
+
   render() {
-    return (
+
+      return (
       <div className="piece">
         <Square
           id={this.props.contents[0]}

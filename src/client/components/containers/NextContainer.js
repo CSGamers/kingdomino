@@ -1,19 +1,55 @@
 import React, { Component } from "react";
 import Piece from "../display/Piece";
+import { connect } from "react-redux";
+import Next4Btn from '../display/Next4Btn';
+import * as actions from "../../actions/actions";
 
-export default class NextContainer extends Component {
+
+
+const mapStateToProps = store => ({
+  nextPieces: store.game.nextPieces
+});
+
+const mapDispatchToProps = dispatch => ({
+  populateCurr: () => {
+    dispatch(actions.populateCurr());
+  },
+  populateNext: () => {
+    dispatch(actions.populateNext());
+  },
+  chooseStartingPlayer: () => {
+    dispatch(actions.chooseStartingPlayer());
+  }
+});
+
+function dealPieces() {
+  this.props.populateCurr();
+  this.props.populateNext();
+  this.props.chooseStartingPlayer();
+}
+
+class NextContainer extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
+
+    const next4 = this.props.nextPieces.map(num => {
+      return <Piece contents={[`${num}a`, `${num}b`]} id={`P${num}`} key={`P${num}`} /> 
+    })
+
     return (
-      <div>
+      <div className="nextContainer">
         <h2>Next Pieces</h2>
-        <Piece contents={["1a", "1b"]} id="P30" />
-        <Piece contents={["7a", "7b"]} id="P31" />
-        <Piece contents={["5a", "5b"]} id="P32" />
-        <Piece contents={["10a", "10b"]} id="P33" />
+          {next4}
+          <Next4Btn dealPieces={dealPieces.bind(this)}/>
       </div>
     );
   }
 }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NextContainer);
