@@ -44,3 +44,15 @@
   width: 50%;
   justify-content: space-between;
 }
+
+.kingContainer {
+  width: 75px;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  margin-top: 10px;
+}
+
+.king {
+  height: 25px;
+  width: 25px;
+}

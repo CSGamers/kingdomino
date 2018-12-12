@@ -51,7 +51,8 @@
     "webpack-dev-server": "^3.1.10"
   },
   "devDependencies": {
-    "redux-devtools-extension": "^2.13.7",
-    "nodemon": "^1.18.8"
+    "file-loader": "^2.0.0",
+    "nodemon": "^1.18.8",
+    "redux-devtools-extension": "^2.13.7"
   }
 }
