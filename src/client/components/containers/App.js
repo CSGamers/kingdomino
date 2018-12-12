@@ -7,6 +7,9 @@ import CurrContainer from "../containers/CurrContainer";
 import NextContainer from "../containers/NextContainer";
 import NextPieceContainer from "./NextPieceContainer";
 
+import HTML5Backend from "react-dnd-html5-backend";
+import { DragDropContext } from "react-dnd";
+
 const mapStateToProps = store => ({
   boards: store.game.boards
 });
@@ -49,7 +52,7 @@ class App extends Component {
     );
   }
 }
-
+App = DragDropContext(HTML5Backend)(App);
 export default connect(
   mapStateToProps,
   mapDispatchToProps
