@@ -5,29 +5,16 @@ const {User} = require('./User');
 const gameController = {};
 
 const Game = sequelize.define('games', {
-  playerOne: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    references: {
-      model: 'users',
-      key: 'id'
-    }
-  },
-  playerTwo: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    references: {
-      model: 'users',
-      key: 'id'
-    }
-  },
+  playerOne: Sequelize.INTEGER,
+  playerTwo: Sequelize.INTEGER,
   winner: Sequelize.STRING,
   loser: Sequelize.STRING,
   scoreOne: Sequelize.INTEGER,
   scoreTwo: Sequelize.INTEGER
 }, { timestamps: false });
 
-Game.hasMany(User);
+// Game.hasMany(User);
+// User.belongsTo(Game);
 
 gameController.createGame = (req, res, next) => {
   console.log('THIS IS A REQ: ', req.body);
