@@ -39,6 +39,8 @@
     "path": "^0.12.7",
     "pg": "^7.7.1",
     "react": "^16.6.3",
+    "react-dnd": "^7.0.2",
+    "react-dnd-html5-backend": "^7.0.2",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
