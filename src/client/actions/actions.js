@@ -20,9 +20,14 @@ export const populateCurr = nextPieces => ({
   payload: nextPieces
 })
 
-export const queuePiece = queuePiece => ({
+export const queuePiece = pieceToPlay => ({
   type: types.QUEUE_PIECE,
-  payload: queuePiece
+  payload: pieceToPlay
+})
+
+export const changeOrientation = pieceToPlay => ({
+  type: types.CHANGE_ORIENTATION,
+  payload: pieceToPlay
 })
 
 export const chooseStartingPlayer = currPlayer => ({
