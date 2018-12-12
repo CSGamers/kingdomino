@@ -3,7 +3,6 @@ import Square from "./Square";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import { DropTarget } from "react-dnd";
-import { findDOMNode } from "react-dom";
 
 const Types = {
   PIECE: "piece"
@@ -18,6 +17,10 @@ const boardSquareTarget = {
     // Obtain the dragged item and coordinates to where to be dropped
     const item = monitor.getItem();
     let coord = monitor.getClientOffset();
+    console.log(
+      "THIS IS TARGET ELEMENT? ",
+      document.elementFromPoint(coord.x, coord.y)
+    );
     return { moved: true, coord: coord, item: item };
   }
 };
@@ -64,6 +67,7 @@ class Board extends Component {
   render() {
     const { position } = this.props;
     const { isOver, canDrop, connectDropTarget } = this.props;
+    console.log("canDrop", canDrop);
     console.log("contents", this.props.contents);
     let squares = [];
     for (let i = 0; i < 49; i++) {

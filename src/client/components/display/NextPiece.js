@@ -4,6 +4,7 @@ import * as actions from "../../actions/actions";
 import Square from "./Square";
 import DOMINOS from "../../DOMINOS.json";
 import { DragSource } from "react-dnd";
+import { findDOMNode } from "react-dom";
 
 const Types = {
   PIECE: "piece"
