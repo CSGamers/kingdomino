@@ -41,19 +41,19 @@ class App extends Component {
     console.log("boards", this.props.boards);
     return (
       <div id="app">
-        <div id="board1Container">
+        <div id="boardContainer">
           <Board id='board1' contents={this.props.boards.board1}/>
           <div className="kingContainer">
             <King color="red" />
             <King color="red" />
           </div>
-        </div>
+        </div> 
         <div className="controls">
           <CurrContainer />
           <NextContainer />
           <NextPieceContainer />
         </div>
-        <div id="board2Container">
+        <div id="boardContainer">
           <Board id='board2' contents={this.props.boards.board2}/>
           <div className="kingContainer">
             <King color="blue" />

@@ -70,8 +70,8 @@ class Board extends Component {
       squares.push(<Square id={i} key={i} contents={this.props.contents[i]} />);
     }
     return connectDropTarget(
-      <div>
-        <h2>{`Player ${this.props.id}`}</h2>
+      <div className="boardBox">
+        <h2>{`Player ${this.props.id.charAt(5)}`}</h2>
         <div className="board">{squares}</div>
       </div>
     );
