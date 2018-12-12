@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../../actions/actions';
-
+import React, { Component } from "react";
+import Board from "../display/Board";
+import Piece from "../display/Piece";
+import { connect } from "react-redux";
+import * as actions from "../../actions/actions";
+import CurrContainer from "../containers/CurrContainer";
+import NextContainer from "../containers/NextContainer";
 
 const mapStateToProps = store => ({
-  store,
+  store
 });
 
-const mapDispatchToProps = dispatch => ({
-
-});
+const mapDispatchToProps = dispatch => ({});
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +22,11 @@ class App extends Component {
   render() {
     return (
       <div id="app">
+        <Board id={1} />
 
+        <CurrContainer />
+        <NextContainer />
+        <Board id={2} />
       </div>
     );
   }
@@ -29,6 +34,5 @@ class App extends Component {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(App);
-

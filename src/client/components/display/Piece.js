@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import Square from "./Square";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
+import Square from "./Square";
+import DOMINOS from "../../DOMINOS.json";
 
 const mapStateToProps = store => ({
-  board: store.game.board
+  store
 });
 
 const mapDispatchToProps = dispatch => ({});
 
-class Board extends Component {
+class Piece extends Component {
   constructor(props) {
     super(props);
   }
@@ -17,14 +18,16 @@ class Board extends Component {
   componentDidMount() {}
 
   render() {
-    let squares = [];
-    for (let i = 0; i < 49; i++) {
-      squares.push(<Square id={i} key={i} contents={this.props.board[i]} />);
-    }
     return (
-      <div>
-        <h2>{`Player ${this.props.id}`}</h2>
-        <div className="board">{squares}</div>
+      <div className="piece">
+        <Square
+          id={this.props.contents[0]}
+          contents={DOMINOS[this.props.contents[0]]}
+        />
+        <Square
+          id={this.props.contents[1]}
+          contents={DOMINOS[this.props.contents[1]]}
+        />
       </div>
     );
   }
@@ -33,4 +36,4 @@ class Board extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Board);
+)(Piece);

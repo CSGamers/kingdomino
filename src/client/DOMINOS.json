@@ -1,386 +1,386 @@
 {
   "1a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   },
   "1b" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   },
   "2a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   },
   "2b" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   }, 
   "3a" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   },
   "3b" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   }, 
   "4a" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   },
   "4b" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   }, 
   "5a" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   },
   "5b" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   }, 
   "6a" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   },
   "6b" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   }, 
   "7a" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 0
   },
   "7b" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 0
   }, 
   "8a" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 0
   },
   "8b" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 0
   }, 
   "9a" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 0
   },
   "9b" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 0
   }, 
   "10a" : {
-    "color" : "lt-grn",
+    "color" : "#AAB550",
     "crowns" : 0
   },
   "10b" : {
-    "color" : "lt-grn",
+    "color" : "#AAB550",
     "crowns" : 0
   }, 
   "11a" : {
-    "color" : "lt-grn",
+    "color" : "#AAB550",
     "crowns" : 0
   },
   "11b" : {
-    "color" : "lt-grn",
+    "color" : "#AAB550",
     "crowns" : 0
   }, 
   "12a" : {
-    "color" : "tan",
+    "color" : "#CF9172",
     "crowns" : 0
   },
   "12b" : {
-    "color" : "tan",
+    "color" : "#CF9172",
     "crowns" : 0
   }, 
   "13a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   },
   "13b" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   }, 
   "14a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   },
   "14b" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 0
   }, 
   "15a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   },
   "15b" : {
-    "color" : "lt-grn",
+    "color" : "#AAB550",
     "crowns" : 0
   }, 
   "16a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   },
   "16b" : {
-    "color" : "tan",
+    "color" : "#CF9172",
     "crowns" : 0
   }, 
   "17a" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   },
   "17b" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 0
   }, 
   "18a" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   },
   "18b" : {
-    "color" : "lt-grn",
+    "color" : "#AAB550",
     "crowns" : 0
   }, 
   "19a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 1
   },
   "19b" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   }, 
   "20a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 1
   },
   "20b" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 0
   }, 
   "21a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 1
   },
   "21b" : {
-    "color" : "lt-grn",
+    "color" : "#AAB550",
     "crowns" : 0
   }, 
   "22a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 1
   },
   "22b" : {
-    "color" : "tan",
+    "color" : "#CF9172",
     "crowns" : 0
   }, 
   "23a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 1
   },
   "23b" : {
-    "color" : "brown",
+    "color" : "#634034",
     "crowns" : 0
   }, 
   "24a" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 1
   },
   "24b" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   }, 
   "25a" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 1
   },
   "25b" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   }, 
   "26a" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 1
   },
   "26b" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   }, 
   "27a" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 1
   },
   "27b" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   }, 
   "28a" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 1
   },
   "28b" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 0
   }, 
   "29a" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 1
   },
   "29b" : {
-    "color" : "lt-grn",
+    "color" : "#AAB550",
     "crowns" : 0
   }, 
   "30a" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 1
   },
   "30b" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   }, 
   "31a" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 1
   },
   "31b" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   }, 
   "32a" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 1
   },
   "32b" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   }, 
   "33a" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 1
   },
   "33b" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   }, 
   "34a" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 1
   },
   "34b" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   }, 
   "35a" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 1
   },
   "35b" : {
-    "color" : "grn",
+    "color" : "#56623D",
     "crowns" : 0
   }, 
   "36a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   },
   "36b" : {
-    "color" : "lt-grn",
+    "color" : "#AAB550",
     "crowns" : 1
   }, 
   "37a" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 0
   },
   "37b" : {
-    "color" : "lt-grn",
+    "color" : "#AAB550",
     "crowns" : 1
   }, 
   "38a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   },
   "38b" : {
-    "color" : "tan",
+    "color" : "#CF9172",
     "crowns" : 1
   }, 
   "39a" : {
-    "color" : "lt-grn",
+    "color" : "#AAB550",
     "crowns" : 0
   },
   "39b" : {
-    "color" : "tan",
+    "color" : "#CF9172",
     "crowns" : 1
   }, 
   "40a" : {
-    "color" : "brown",
+    "color" : "#634034",
     "crowns" : 1
   },
   "40b" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   }, 
   "41a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   },
   "41b" : {
-    "color" : "lt-grn",
+    "color" : "#AAB550",
     "crowns" : 2
   }, 
   "42a" : {
-    "color" : "blue",
+    "color" : "#468CE2",
     "crowns" : 0
   },
   "42b" : {
-    "color" : "lt-grn",
+    "color" : "#AAB550",
     "crowns" : 2
   }, 
   "43a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   },
   "43b" : {
-    "color" : "tan",
+    "color" : "#CF9172",
     "crowns" : 2
   }, 
   "44a" : {
-    "color" : "lt-grn",
+    "color" : "#AAB550",
     "crowns" : 0
   },
   "44b" : {
-    "color" : "tan",
+    "color" : "#CF9172",
     "crowns" : 2
   }, 
   "45a" : {
-    "color" : "brown",
+    "color" : "#634034",
     "crowns" : 2
   },
   "45b" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   }, 
   "46a" : {
-    "color" : "tan",
+    "color" : "#CF9172",
     "crowns" : 0
   },
   "46b" : {
-    "color" : "brown",
+    "color" : "#634034",
     "crowns" : 2
   }, 
   "47a" : {
-    "color" : "tan",
+    "color" : "#CF9172",
     "crowns" : 0
   },
   "47b" : {
-    "color" : "brown",
+    "color" : "#634034",
     "crowns" : 2
   }, 
   "48a" : {
-    "color" : "yellow",
+    "color" : "#FFCD53",
     "crowns" : 0
   },
   "48b" : {
-    "color" : "brown",
+    "color" : "#634034",
     "crowns" : 3
   }
 }
