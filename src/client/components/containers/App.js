@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import CurrContainer from "../containers/CurrContainer";
 import NextContainer from "../containers/NextContainer";
-import NextPiece from "./NextPiece";
+import NextPieceContainer from "./NextPieceContainer";
 
 const mapStateToProps = store => ({
   boards: store.game.boards
@@ -17,6 +17,9 @@ const mapDispatchToProps = dispatch => ({
   },
   populateNext: () => {
     dispatch(actions.populateNext());
+  },
+  chooseStartingPlayer: () => {
+    dispatch(actions.chooseStartingPlayer());
   }
 });
 
@@ -28,6 +31,7 @@ class App extends Component {
   componentDidMount() {
     this.props.shufflePieces();
     this.props.populateNext();
+    this.props.chooseStartingPlayer();
   }
 
   render() {
@@ -38,7 +42,7 @@ class App extends Component {
         <div className="controls">
           <CurrContainer />
           <NextContainer />
-          <NextPiece />
+          <NextPieceContainer />
         </div>
         <Board id={2} contents={this.props.boards.board2} />
       </div>
