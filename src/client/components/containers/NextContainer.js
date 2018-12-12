@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import Piece from "../display/Piece";
 import { connect } from "react-redux";
-import Next4Btn from '../display/Next4Btn';
+import Next4Btn from "../display/Next4Btn";
 import * as actions from "../../actions/actions";
-
-
 
 const mapStateToProps = store => ({
   nextPieces: store.game.nextPieces
@@ -30,16 +28,21 @@ class NextContainer extends Component {
   }
 
   render() {
-
     const next4 = this.props.nextPieces.map(num => {
-      return <Piece contents={[`${num}a`, `${num}b`]} id={`P${num}`} key={`P${num}`} /> 
-    })
+      return (
+        <Piece
+          contents={[`${num}a`, `${num}b`]}
+          id={`P${num}`}
+          key={`P${num}`}
+        />
+      );
+    });
 
     return (
       <div className="nextContainer">
         <h2>Next Pieces</h2>
-          {next4}
-          <Next4Btn dealPieces={dealPieces.bind(this)}/>
+        {next4}
+        <Next4Btn dealPieces={dealPieces.bind(this)} />
       </div>
     );
   }

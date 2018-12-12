@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 import QueuePieceBtn from "../display/QueuePieceBtn";
 import * as actions from "../../actions/actions";
 
-
-
 const mapStateToProps = store => ({
   currPieces: store.game.currPieces
 });
@@ -13,7 +11,7 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => ({
   queuePiece: () => {
     dispatch(actions.queuePiece());
-  },
+  }
 });
 
 class CurrContainer extends Component {
@@ -22,10 +20,15 @@ class CurrContainer extends Component {
   }
 
   render() {
-
     const curr4 = this.props.currPieces.map(num => {
-      return <Piece contents={[`${num}a`, `${num}b`]} id={`P${num}`} key={`P${num}`} /> 
-    })
+      return (
+        <Piece
+          contents={[`${num}a`, `${num}b`]}
+          id={`P${num}`}
+          key={`P${num}`}
+        />
+      );
+    });
 
     return (
       <div className="currContainer">

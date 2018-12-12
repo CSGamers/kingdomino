@@ -29,7 +29,7 @@
 }
 #app {
   display: grid;
-  grid-template-columns: repeat(3, 33.33%); 
+  grid-template-columns: repeat(3, 33.33%);
   flex-wrap: wrap;
   justify-content: space-around;
 }
@@ -40,7 +40,8 @@
   flex-wrap: wrap;
 }
 
-.currContainer, .nextContainer {
+.currContainer,
+.nextContainer {
   width: 50%;
   justify-content: space-between;
 }
