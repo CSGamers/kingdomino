@@ -1,14 +1,21 @@
 import React, { Component } from "react";
 import Piece from "../display/Piece";
+import { connect } from "react-redux";
 
-export default class CurrContainer extends Component {
+const mapStateToProps = store => ({
+  store
+});
+
+const mapDispatchToProps = dispatch => ({});
+
+class CurrContainer extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div>
+      <div id="curr">
         <h2>Current Pieces</h2>
         <Piece contents={["30a", "30b"]} id="P30" />
         <Piece contents={["31a", "31b"]} id="P31" />
@@ -18,3 +25,8 @@ export default class CurrContainer extends Component {
     );
   }
 }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CurrContainer);

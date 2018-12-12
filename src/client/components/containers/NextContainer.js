@@ -1,13 +1,20 @@
 import React, { Component } from "react";
 import Piece from "../display/Piece";
+import { connect } from "react-redux";
 
-export default class NextContainer extends Component {
+const mapStateToProps = store => ({
+  store
+});
+
+const mapDispatchToProps = dispatch => ({});
+
+class NextContainer extends Component {
   constructor(props) {
     super(props);
   }
   render() {
     return (
-      <div>
+      <div id="next">
         <h2>Next Pieces</h2>
         <Piece contents={["1a", "1b"]} id="P30" />
         <Piece contents={["7a", "7b"]} id="P31" />
@@ -17,3 +24,8 @@ export default class NextContainer extends Component {
     );
   }
 }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NextContainer);

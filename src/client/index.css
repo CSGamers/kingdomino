@@ -23,6 +23,7 @@
   flex-direction: row;
   overflow: hidden;
   background-color: aquamarine;
+  border: 2px solid black;
 }
 #app {
   display: flex;

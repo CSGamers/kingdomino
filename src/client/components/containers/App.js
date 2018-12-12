@@ -23,7 +23,6 @@ class App extends Component {
     return (
       <div id="app">
         <Board id={1} />
-
         <CurrContainer />
         <NextContainer />
         <Board id={2} />
