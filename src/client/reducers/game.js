@@ -8,6 +8,7 @@ const initialState = {
   nextPieces: [],
   currPlayer: '',
   pieceToPlay: { piece: 0, orientation: 'horizontal' },
+  message: '',
   boards: {
     board1: [
       {}, {}, {}, {}, {}, {}, {},
