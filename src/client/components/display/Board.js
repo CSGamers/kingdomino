@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 
 const mapStateToProps = store => ({
-  board: store.game.board
+  boards: store.game.boards
 });
 
 const mapDispatchToProps = dispatch => ({});
@@ -17,9 +17,10 @@ class Board extends Component {
   componentDidMount() {}
 
   render() {
+    console.log('contents', this.props.contents);
     let squares = [];
     for (let i = 0; i < 49; i++) {
-      squares.push(<Square id={i} key={i} contents={this.props.board1[i]} />);
+      squares.push(<Square id={i} key={i} contents={this.props.contents[i]} />);
     }
     return (
       <div>

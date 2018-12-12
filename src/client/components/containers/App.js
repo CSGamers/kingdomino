@@ -7,13 +7,16 @@ import CurrContainer from "../containers/CurrContainer";
 import NextContainer from "../containers/NextContainer";
 
 const mapStateToProps = store => ({
-  store
+  boards: store.game.boards
 });
 
 const mapDispatchToProps = dispatch => ({
   shufflePieces: () => {
     dispatch(actions.shufflePieces());
   },
+  populateNext: () => {
+    dispatch(actions.populateNext());
+  }
 });
 
 class App extends Component {
@@ -23,16 +26,20 @@ class App extends Component {
 
   componentDidMount() {
     this.props.shufflePieces();
+    this.props.populateNext();
   }
 
   render() {
+    console.log('boards', this.props.boards);
     return (
       <div id="app">
-        <Board id={1} />
+        <Board id={1} contents={this.props.boards.board1}/>
 
         <CurrContainer />
         <NextContainer />
-        <Board id={2} />
+
+        <Board id={2} contents={this.props.boards.board2} />
+
       </div>
     );
   }

@@ -44,7 +44,6 @@ class Square extends Component {
   componentDidMount() {}
 
   render() {
-    const { connectDropTarget } = this.props;
 
     let styles = {
       backgroundColor: this.props.contents.color
@@ -57,7 +56,6 @@ class Square extends Component {
       }
     }
 
-    // return connectDropTarget(
     return (
       <div
         className="square"
@@ -71,7 +69,6 @@ class Square extends Component {
   }
 } 
 
-Square = DropTarget(Types.PIECE, {}, collect)(Square);
 
 export default connect(
   mapStateToProps,

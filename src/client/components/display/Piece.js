@@ -25,9 +25,8 @@ class Piece extends Component {
   }
 
   render() {
-    const { isDragging, connectDragSource } = this.props;
-    return connectDragSource(
-      // return (
+
+      return (
       <div className="piece">
         <Square
           id={this.props.contents[0]}
@@ -41,8 +40,6 @@ class Piece extends Component {
     );
   }
 }
-
-Piece = DragSource(Types.ITEM, itemSource, collect)(Piece);
 
 export default connect(
   mapStateToProps,

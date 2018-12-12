@@ -7,24 +7,26 @@ const initialState = {
   currPieces: [],
   nextPieces: [],
   currPlayer: '',
-  board1: [
-    {}, {}, {}, {}, {}, {}, {},
-    {}, {}, {}, {}, {}, {}, {},
-    {}, {}, {}, {}, {}, {}, {},
-    {}, {}, {}, {}, {}, {}, {},
-    {}, {}, {}, {}, {}, {}, {},
-    {}, {}, {}, {}, {}, {}, {},
-    {}, {}, {}, {}, {}, {}, {},
-  ],
-  board2: [
-    {}, {}, {}, {}, {}, {}, {},
-    {}, {}, {}, {}, {}, {}, {},
-    {}, {}, {}, {}, {}, {}, {},
-    {}, {}, {}, {}, {}, {}, {},
-    {}, {}, {}, {}, {}, {}, {},
-    {}, {}, {}, {}, {}, {}, {},
-    {}, {}, {}, {}, {}, {}, {},
-  ]
+  boards: {
+    board1: [
+      {}, {}, {}, {}, {}, {}, {},
+      {}, {}, {}, {}, {}, {}, {},
+      {}, {}, {}, {}, {}, {}, {},
+      {}, {}, {}, {color: 'black'}, {}, {}, {},
+      {}, {}, {}, {}, {}, {}, {},
+      {}, {}, {}, {}, {}, {}, {},
+      {}, {}, {}, {}, {}, {}, {},
+    ],
+    board2: [
+      {}, {}, {}, {}, {}, {}, {},
+      {}, {}, {}, {}, {}, {}, {},
+      {}, {}, {}, {}, {}, {}, {},
+      {}, {}, {}, {color: 'black'}, {}, {}, {},
+      {}, {}, {}, {}, {}, {}, {},
+      {}, {}, {}, {}, {}, {}, {},
+      {}, {}, {}, {}, {}, {}, {},
+    ]
+  }
 }
 
 
@@ -47,6 +49,7 @@ const initialState = {
         console.log('action', action);
 
         const nums = Array.apply(null, {length: 49}).map(Number.call, Number);
+        nums.shift();
 
         function shuffle(a) {
           for (let i = a.length - 1; i > 0; i--) {
@@ -65,9 +68,35 @@ const initialState = {
 
       }
 
+      case types.POPULATE_NEXT: {
+        console.log('action', action);
+
+        const leftOverPieces = state.unusedPieces.slice();
+
+        const next4 = leftOverPieces.splice(-4);
+
+        return {
+          ...state,
+          unusedPieces: leftOverPieces,
+          nextPieces: next4,
+        }
+      }
+
+      case types.POPULATE_CURR: {
+        console.log('action', action);
+
+        return {
+          ...state,
+          currPieces: state.nextPieces,
+          nextPieces: [],
+        }
+      }
+
       default: 
         return state
     }
+
+    
   }
 
 export default gameReducer;
