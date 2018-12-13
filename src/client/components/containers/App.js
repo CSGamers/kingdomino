@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import Board from '../display/Board';
-import Piece from '../display/Piece';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/actions';
 import CurrContainer from '../containers/CurrContainer';
 import NextContainer from '../containers/NextContainer';
 import NextPieceContainer from './NextPieceContainer';
 import LandingPage from './LandingPage';
+import King from "../display/King";
+import logo from '../../assets/img/kingdomino.png'
+import HTML5Backend from "react-dnd-html5-backend";
+import { DragDropContext } from "react-dnd";
+import TotalScoreBtn from "../display/TotalScoreBtn";
+import ActivePiecesContainer from "./ActivePiecesContainer";
+import Message from "../display/Message";
 
 const mapStateToProps = store => ({
   boards: store.game.boards,
@@ -22,7 +28,11 @@ const mapDispatchToProps = dispatch => ({
   },
   chooseStartingPlayer: () => {
     dispatch(actions.chooseStartingPlayer());
+  },
+  tallyScore: () => {
+    dispatch(actions.tallyScore());
   }
+
 });
 
 class App extends Component {
@@ -37,26 +47,40 @@ class App extends Component {
   }
 
   render() {
-    console.log('boards', this.props.boards);
+    console.log("boards", this.props.boards);
     return (
       <div id='app'>
         {this.props.isAuthenticated === false ?
           <LandingPage /> :
           <div>
-            <Board id={1} contents={this.props.boards.board1} />
-            <div className='controls'>
-              <CurrContainer />
-              <NextContainer />
-              <NextPieceContainer />
+            <div id="boardContainer">
+              <Board id='board1' contents={this.props.boards.board1} />
+              <div className="kingContainer">
+                <King color="red" />
+                <King color="red" />
+              </div>
             </div>
-            <Board id={2} contents={this.props.boards.board2} />
+            <div className="controls">
+              <img className="logo" src={logo} />
+              <Message />
+              <ActivePiecesContainer />
+              <NextPieceContainer />
+              {/* <TotalScoreBtn count = {this.props.tallyScore} /> */}
+            </div>
+            <div id="boardContainer">
+              <Board id='board2' contents={this.props.boards.board2} />
+              <div className="kingContainer">
+                <King color="blue" />
+                <King color="blue" />
+              </div>
+            </div>
           </div>
         }
       </div>
     );
   }
 }
-
+App = DragDropContext(HTML5Backend)(App);
 export default connect(
   mapStateToProps,
   mapDispatchToProps

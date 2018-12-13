@@ -1,8 +1,8 @@
 import * as types from './actionTypes';
 
-export const placePiece = piece => ({
+export const placePiece = targetObj => ({
   type: types.PLACE_PIECE,
-  payload: piece,
+  payload: targetObj
 })
 
 export const shufflePieces = pieces => ({
@@ -42,3 +42,7 @@ export const loginUser = user => ({
 export const signOutUser = user => ({
   type: types.SIGN_OUT_USER,
 });
+export const tallyScore = boards => ({
+  type: types.TALLY_SCORE,
+  payload: boards
+})

@@ -7,3 +7,4 @@ export const QUEUE_PIECE = 'QUEUE_PIECE';
 export const CHANGE_ORIENTATION = 'CHANGE_ORIENTATION';
 export const LOGIN_USER = 'LOGIN_USER';
 export const SIGN_OUT_USER = 'SIGN_OUT_USER';
+export const TALLY_SCORE = 'TALLY_SCORE';

@@ -10,7 +10,7 @@ class Crown extends Component {
 
   render() {
     return (
-      <div className='king'>
+      <div className='crown'>
         <img className='crown' src={crown} ></img>
       </div>
     );
