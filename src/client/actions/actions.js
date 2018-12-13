@@ -35,6 +35,13 @@ export const chooseStartingPlayer = currPlayer => ({
   payload: currPlayer
 })
 
+export const loginUser = user => ({
+  type: types.LOGIN_USER,
+  payload: user
+});
+export const signOutUser = user => ({
+  type: types.SIGN_OUT_USER,
+});
 export const tallyScore = boards => ({
   type: types.TALLY_SCORE,
   payload: boards
