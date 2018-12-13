@@ -11,7 +11,7 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => {
   return(
     {
-      loginUser : (user) => {
+      loginUser : user => {
         dispatch(actions.loginUser(user));
       }
     }
@@ -62,18 +62,36 @@ class LandingPage extends Component {
       .then(res => res.json())
       .then(res => {
         console.log('USER: ', res.user);
-        this.props.loginUser(res.user.userName);
+        this.props.loginUser(res.user);
+      })
+      .catch(err => console.log('Error: ', err));
+  }
+
+  handleSignup() {
+    fetch('http://localhost:8000/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        userName: this.state.username,
+        password: this.state.password
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.props.loginUser(res.user);
       })
       .catch(err => console.log('Error: ', err));
   }
 
   render() {
     return (
-      <div>
-        <h1>Welcome to KingDomino</h1>
+      <div id='user-login'>
+        <img id='page-logo' src={this.props.logo}/>
         {this.state.togglePage === 'login' ?
           <Login handleTogglePage={this.handleTogglePage.bind(this)} handleUserName={this.handleUserName.bind(this)} handlePassword={this.handlePassword.bind(this)} userName={this.state.username} password={this.state.password} handleLogin={this.handleLogin.bind(this)} /> :
-          <Signup handleTogglePage={this.handleTogglePage.bind(this)} handleUserName={this.handleUserName.bind(this)} handlePassword={this.handlePassword.bind(this)} userName={this.state.username} password={this.state.password} handleLogin={this.handleLogin.bind(this)} />
+          <Signup handleTogglePage={this.handleTogglePage.bind(this)} handleUserName={this.handleUserName.bind(this)} handlePassword={this.handlePassword.bind(this)} userName={this.state.username} password={this.state.password} handleSignup={this.handleSignup.bind(this)} />
         }
       </div>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Login = props => {
   return (
-    <div>
+    <div className='login-page'>
       <input type='text' name='username' placeholder='Username' value={props.userName} onChange={(e) => { props.handleUserName(e) }} />
       <input type='password' name='password' placeholder='Password' value={props.password} onChange={(e) => { props.handlePassword(e) }} />
       <button onClick={() => {props.handleLogin();}}>Login</button>
