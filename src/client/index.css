@@ -1,4 +1,4 @@
-@keyframes zoomIn {
+/* @keyframes zoomIn {
   from {
     opacity: 0;
     transform: scale3d(0.3, 0.3, 0.3);
@@ -9,8 +9,8 @@
 }
 
 .zoomIn {
-  animation-name: zoomIn;
-}
+  animation: 200ms zoomIn ease-in;
+} */
 
 .square {
   width: 50px;
@@ -52,7 +52,7 @@
 }
 
 .controls {
-  border: red 1px solid;
+  /* border: red 1px solid; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -62,8 +62,12 @@
   margin: auto;
 }
 
+#startBtn {
+  margin: auto;
+}
+
 .activePiecesContainer {
-  border: blue 1px solid;
+  /* border: blue 1px solid; */
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 50%);
@@ -86,7 +90,7 @@
 
 .currContainer,
 .nextContainer {
-  border: lime 1px solid;
+  /* border: lime 1px solid; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -99,13 +103,13 @@
   width: 100%;
   background-color: white;
   text-align: center;
-  animation: 200ms zoomIn ease-in;
-  
+  border: 1px solid black;
+  margin-top: 10px;
 }
 
 .boardBox {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 90px;
 }
 
 .pieces {
@@ -129,7 +133,7 @@
   width: 30px;
 }
 
-#next4Btn, #queuePieceBtn {
+#next4Btn, #skipBtn {
   margin-top: 10px;
 }
 

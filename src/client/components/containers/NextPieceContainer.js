@@ -10,7 +10,11 @@ const mapStateToProps = store => ({
   pieceToPlay: store.game.pieceToPlay
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+  skipPiece: () => {
+    dispatch(actions.skipPiece());
+  }
+});
 
 class NextPieceContainer extends Component {
   constructor(props) {
@@ -18,20 +22,18 @@ class NextPieceContainer extends Component {
   }
 
   render() {
+    if (this.props.currPieces.length && this.props.pieceToPlay.piece == 0) this.props.skipPiece();
     let num = this.props.pieceToPlay.piece;
     let piece;
-    if (num > 0)
-      piece = (
-        <NextPiece
-          contents={[`${num}a`, `${num}b`]}
-          id={`P${num}`}
-          key={`P${num}`}
-        />
-      );
+    let style = { display: 'none' }
+    if (num > 0) {
+      piece = ( <NextPiece contents={[`${num}a`, `${num}b`]} id={`P${num}`} key={`P${num}`} /> );
+      style = {};
+    }
 
     return (
       <div className = "nextPieceContainer">
-        <i>click to rotate</i>
+        <i style={style}>click to rotate</i>
         {piece}
       </div>
     );

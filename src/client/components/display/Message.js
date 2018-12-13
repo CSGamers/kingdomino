@@ -16,8 +16,8 @@ class Message extends Component {
   render() {
 
       return (
-      <div className="message zoomIn">
-        <h2>{this.props.message}</h2>
+      <div className="message">
+        <h2 className="zoomIn">{this.props.message}</h2>
       </div>
     );
   }
