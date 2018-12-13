@@ -147,3 +147,10 @@ h2 {
   font-size: 1.3rem;
   font-weight: 700;
 }
+
+
+/* * For login page */
+.login-toggle{
+  color: blue;
+  cursor: pointer;
+}
