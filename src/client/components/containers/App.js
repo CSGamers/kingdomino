@@ -1,14 +1,16 @@
-import React, { Component } from "react";
-import Board from "../display/Board";
-import Piece from "../display/Piece";
-import { connect } from "react-redux";
-import * as actions from "../../actions/actions";
-import CurrContainer from "../containers/CurrContainer";
-import NextContainer from "../containers/NextContainer";
-import NextPieceContainer from "./NextPieceContainer";
+import React, { Component } from 'react';
+import Board from '../display/Board';
+import Piece from '../display/Piece';
+import { connect } from 'react-redux';
+import * as actions from '../../actions/actions';
+import CurrContainer from '../containers/CurrContainer';
+import NextContainer from '../containers/NextContainer';
+import NextPieceContainer from './NextPieceContainer';
+import LandingPage from './LandingPage';
 
 const mapStateToProps = store => ({
-  boards: store.game.boards
+  boards: store.game.boards,
+  isAuthenticated: store.auth.isAuthenticated
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -37,15 +39,19 @@ class App extends Component {
   render() {
     console.log('boards', this.props.boards);
     return (
-      <div id="app">
-        <Board id={1} contents={this.props.boards.board1}/>
-        <div className="controls">
-          <CurrContainer />
-          <NextContainer />
-          <NextPieceContainer />
-        </div>
-        <Board id={2} contents={this.props.boards.board2} />
-
+      <div id='app'>
+        {this.props.isAuthenticated === false ?
+          <LandingPage /> :
+          <div>
+            <Board id={1} contents={this.props.boards.board1} />
+            <div className='controls'>
+              <CurrContainer />
+              <NextContainer />
+              <NextPieceContainer />
+            </div>
+            <Board id={2} contents={this.props.boards.board2} />
+          </div>
+        }
       </div>
     );
   }

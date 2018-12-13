@@ -34,3 +34,11 @@ export const chooseStartingPlayer = currPlayer => ({
   type: types.CHOOSE_STARTING_PLAYER,
   payload: currPlayer
 })
+
+export const loginUser = user => ({
+  type: types.LOGIN_USER,
+  payload: user
+});
+export const signOutUser = user => ({
+  type: types.SIGN_OUT_USER,
+});

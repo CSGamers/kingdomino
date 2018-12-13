@@ -44,3 +44,9 @@
   width: 50%;
   justify-content: space-between;
 }
+
+/* * For login page */
+.login-toggle{
+  color: blue;
+  cursor: pointer;
+}
