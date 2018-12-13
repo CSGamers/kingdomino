@@ -3,9 +3,11 @@ import Piece from "../display/Piece";
 import { connect } from "react-redux";
 import SkipBtn from "../display/SkipBtn";
 import * as actions from "../../actions/actions";
+import BeginBtn from '../display/BeginBtn'
 
 const mapStateToProps = store => ({
-  currPieces: store.game.currPieces
+  currPieces: store.game.currPieces,
+  hasStarted: store.game.hasStarted
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -30,13 +32,17 @@ class CurrContainer extends Component {
       );
     });
 
+    let btn;
+    this.props.hasStarted ? btn = <SkipBtn skipPiece={this.props.skipPiece} /> : btn = <BeginBtn skipPiece={this.props.skipPiece} />
+    
+
     return (
       <div className="currContainer">
         <h2>Current Pieces</h2>
         <div className="pieces">
          {curr4}
         </div>
-        <SkipBtn skipPiece={this.props.skipPiece} />
+        {btn}
       </div>
     );
   }

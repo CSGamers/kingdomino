@@ -7,7 +7,8 @@ import * as actions from "../../actions/actions";
 const mapStateToProps = store => ({
   currentPlayer: store.game.currPlayer,
   currPieces: store.game.currPieces,
-  pieceToPlay: store.game.pieceToPlay
+  pieceToPlay: store.game.pieceToPlay,
+  hasStarted: store.game.hasStarted,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -22,7 +23,7 @@ class NextPieceContainer extends Component {
   }
 
   render() {
-    if (this.props.currPieces.length && this.props.pieceToPlay.piece == 0) this.props.skipPiece();
+    if (this.props.hasStarted && this.props.currPieces.length < 4 && this.props.pieceToPlay.piece == 0) this.props.skipPiece();
     let num = this.props.pieceToPlay.piece;
     let piece;
     let style = { display: 'none' }

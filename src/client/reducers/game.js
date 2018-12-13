@@ -9,6 +9,7 @@ const initialState = {
   currPieces: [],
   nextPieces: [],
   currPlayer: '',
+  hasStarted: false,
   pieceToPlay: { piece: 0, orientation: 'horizontal', inverted: false },
   message: `Click Start to Begin`,
   boards: {
@@ -94,7 +95,7 @@ const initialState = {
         else winner = 'PLAYER 2 WINS';
 
         console.log(winner);
-        alert(winner);
+        alert(`${winner} | ${player1Score} - ${player2Score}`);
 
         return {
           ...state,
@@ -162,7 +163,7 @@ const initialState = {
           ...state,
           boards: newBoards,
           pieceToPlay: pieceToPlay,
-          currPlayer: player,
+          // currPlayer: player,
           message: message
         }
       }
@@ -230,8 +231,9 @@ const initialState = {
           ...state,
           currPieces: currPieces,
           pieceToPlay: pieceToPlay,
-          currPlayer: chooseStartingPlayer,
+          currPlayer: player,
           message: message,
+          hasStarted: true,
         }
       }
 
