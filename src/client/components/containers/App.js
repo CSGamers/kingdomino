@@ -49,32 +49,35 @@ class App extends Component {
   render() {
     console.log("boards", this.props.boards);
     return (
-      <div id='app'>
-        {this.props.isAuthenticated === false ?
-          <LandingPage /> :
-          <div>
-            <div id="boardContainer">
-              <Board id='board1' contents={this.props.boards.board1} />
-              <div className="kingContainer">
-                <King color="red" />
-                <King color="red" />
+      <div>
+        {
+          this.props.isAuthenticated === false ?
+            <div id='landing-page'>
+              <LandingPage logo={logo} />
+            </div> :
+            <div id='app'>
+              <div id="boardContainer">
+                <Board id='board1' contents={this.props.boards.board1} />
+                <div className="kingContainer">
+                  <King color="red" />
+                  <King color="red" />
+                </div>
+              </div>
+              <div className="controls">
+                <img className="logo" src={logo} />
+                <Message />
+                <ActivePiecesContainer />
+                <NextPieceContainer />
+                {/* <TotalScoreBtn count = {this.props.tallyScore} /> */}
+              </div>
+              <div id="boardContainer">
+                <Board id='board2' contents={this.props.boards.board2} />
+                <div className="kingContainer">
+                  <King color="blue" />
+                  <King color="blue" />
+                </div>
               </div>
             </div>
-            <div className="controls">
-              <img className="logo" src={logo} />
-              <Message />
-              <ActivePiecesContainer />
-              <NextPieceContainer />
-              {/* <TotalScoreBtn count = {this.props.tallyScore} /> */}
-            </div>
-            <div id="boardContainer">
-              <Board id='board2' contents={this.props.boards.board2} />
-              <div className="kingContainer">
-                <King color="blue" />
-                <King color="blue" />
-              </div>
-            </div>
-          </div>
         }
       </div>
     );

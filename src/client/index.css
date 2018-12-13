@@ -146,6 +146,28 @@ h2 {
 
 
 /* * For login page */
+#landing-page{
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+#user-login{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+#page-logo{
+  margin-bottom: 15px;
+}
+.login-page{
+  display: flex;
+  flex-flow: column;
+}
+
+#login-page input{
+  margin-bottom: 5px;
+}
+
 .login-toggle{
   color: blue;
   cursor: pointer;
