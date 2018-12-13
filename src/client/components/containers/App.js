@@ -43,11 +43,10 @@ class App extends Component {
   componentDidMount() {
     this.props.shufflePieces();
     this.props.populateNext();
-    this.props.chooseStartingPlayer();
   }
 
   render() {
-    console.log("boards", this.props.boards);
+    console.log("boards", this.props.boards, 'USER: ', this.props.user);
     return (
       <div>
         {
@@ -57,7 +56,7 @@ class App extends Component {
             </div> :
             <div id='app'>
               <div id="boardContainer">
-                <Board id='board1' contents={this.props.boards.board1} />
+                <Board id='board1' contents={this.props.boards.board1}/>
                 <div className="kingContainer">
                   <King color="red" />
                   <King color="red" />

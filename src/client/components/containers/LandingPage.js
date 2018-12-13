@@ -80,7 +80,6 @@ class LandingPage extends Component {
     })
       .then(res => res.json())
       .then(res => {
-        console.log('USER: ', res.user);
         this.props.loginUser(res.user);
       })
       .catch(err => console.log('Error: ', err));
