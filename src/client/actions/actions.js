@@ -1,6 +1,6 @@
 import * as types from './actionTypes';
 
-export const placePiece = (targetObj) => ({
+export const placePiece = targetObj => ({
   type: types.PLACE_PIECE,
   payload: targetObj
 })
@@ -33,4 +33,9 @@ export const changeOrientation = pieceToPlay => ({
 export const chooseStartingPlayer = currPlayer => ({
   type: types.CHOOSE_STARTING_PLAYER,
   payload: currPlayer
+})
+
+export const tallyScore = boards => ({
+  type: types.TALLY_SCORE,
+  payload: boards
 })
