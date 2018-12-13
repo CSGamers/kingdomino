@@ -37,13 +37,18 @@ const initialState = {
     switch (action.type) {
       case types.PLACE_PIECE: {
         console.log('action', action);
+        console.log('target', action.payload)
+        const payload = action.payload.split('-');
+        const board = payload[0];
+        const square = payload[1];
 
-        const newBoard = JSON.parse(JSON.stringify(state.board));
+        const newBoard = JSON.parse(JSON.stringify(state.boards));
+        
 
 
         return {
           ...state,
-          board: newBoard,
+          // board: newBoard,
         }
       }
 

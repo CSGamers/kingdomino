@@ -3,23 +3,20 @@ import Square from "./Square";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import { DropTarget } from "react-dnd";
-import { findDOMNode } from "react-dom";
+
+
+const mapStateToProps = store => ({
+  boards: store.game.boards
+});
+
+const mapDispatchToProps = dispatch => ({
+  placePiece: (target) => {
+    dispatch(actions.placePiece(target));
+  }
+});
 
 const Types = {
   PIECE: "piece"
-};
-
-const boardSquareTarget = {
-  drop(props, monitor, component) {
-    if (monitor.didDrop()) {
-      return;
-    }
-
-    // Obtain the dragged item and coordinates to where to be dropped
-    const item = monitor.getItem();
-    let coord = monitor.getClientOffset();
-    return { moved: true, coord: coord, item: item };
-  }
 };
 
 function collect(connect, monitor) {
@@ -35,11 +32,26 @@ function collect(connect, monitor) {
   };
 }
 
-const mapStateToProps = store => ({
-  boards: store.game.boards
-});
+const boardSquareTarget = {
+  drop(props, monitor, component) {
+    if (monitor.didDrop()) {
+      return;
+    }
 
-const mapDispatchToProps = dispatch => ({});
+    // Obtain the dragged item and coordinates to where to be dropped
+    const item = monitor.getItem();
+    console.log('item', item)
+    let coord = monitor.getClientOffset();
+    let target = document.elementFromPoint(coord.x, coord.y).id;
+    console.log(target);
+    props.placePiece(target);
+    // console.log(
+    //   "THIS IS TARGET ELEMENT? ",
+    //   document.elementFromPoint(coord.x, coord.y)
+    // );
+    return { moved: true, coord: coord, item: item };
+  }
+};
 
 class Board extends Component {
   constructor(props) {
@@ -64,10 +76,11 @@ class Board extends Component {
   render() {
     const { position } = this.props;
     const { isOver, canDrop, connectDropTarget } = this.props;
-    console.log("contents", this.props.contents);
+    // console.log("canDrop", canDrop);
+    // console.log("contents", this.props.contents);
     let squares = [];
     for (let i = 0; i < 49; i++) {
-      squares.push(<Square id={i} key={i} contents={this.props.contents[i]} />);
+      squares.push(<Square id={this.props.id + '-' + i} key={i} contents={this.props.contents[i]} />);
     }
     return connectDropTarget(
       <div className="boardBox">
