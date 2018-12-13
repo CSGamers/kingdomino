@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Piece from "../display/Piece";
 import { connect } from "react-redux";
-import QueuePieceBtn from "../display/QueuePieceBtn";
+import SkipBtn from "../display/SkipBtn";
 import * as actions from "../../actions/actions";
 
 const mapStateToProps = store => ({
@@ -9,8 +9,8 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  queuePiece: () => {
-    dispatch(actions.queuePiece());
+  skipPiece: () => {
+    dispatch(actions.skipPiece());
   }
 });
 
@@ -36,7 +36,7 @@ class CurrContainer extends Component {
         <div className="pieces">
          {curr4}
         </div>
-        <QueuePieceBtn queuePiece={this.props.queuePiece} />
+        <SkipBtn skipPiece={this.props.skipPiece} />
       </div>
     );
   }
