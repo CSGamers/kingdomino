@@ -36,6 +36,72 @@ const initialState = {
   const gameReducer = (state = initialState, action) => {
 
     switch (action.type) {
+      case types.TALLY_SCORE: {
+        console.log('action', action);
+
+        const newBoards = JSON.parse(JSON.stringify(state.boards));
+
+        
+
+        function tallyBoardScore(board) {
+          let total = 0;
+
+          for (let i = 0; i < 49; i++) {
+            let count = 0;
+            let crowns = 0;
+            if (!board[i].seen && board[i].color !== 'black') checkPiece(i);
+
+            function checkPiece(num) {
+              board[num].seen = true;
+              if (board[num].color) {
+                count += 1;
+                crowns += board[num].crowns
+
+                if (board[num+1] && !board[num+1].seen) {
+                  if (board[num+1].color === board[num].color) {
+                    checkPiece(num+1);
+                  }
+                }
+                if (board[num-1] && !board[num-1].seen) {
+                  if (board[num-1].color === board[num].color) {
+                    checkPiece(num-1);
+                  }
+                }
+                if (board[num-7] && !board[num-7].seen) {
+                  if (board[num-7].color === board[num].color) {
+                    checkPiece(num-7);
+                  }
+                }
+                if (board[num+7] && !board[num+7].seen) {
+                  if (board[num+7].color === board[num].color) {
+                    checkPiece(num+7);
+                  }
+                }
+              }
+            }
+            total += (count * crowns)
+          }
+          return total;
+        }
+
+        let player1Score = tallyBoardScore(newBoards.board1);
+        let player2Score = tallyBoardScore(newBoards.board2);
+
+        console.log('scores', player1Score, player2Score);
+
+        let winner;
+        if (player1Score === player2Score) winner = 'DRAW';
+        else if (player1Score > player2Score) winner = 'PLAYER 1 WINS';
+        else winner = 'PLAYER 2 WINS';
+
+        console.log(winner);
+
+        return {
+          ...state,
+          winner: winner,
+        }
+      }
+
       case types.PLACE_PIECE: {
         console.log('action', action);
         console.log('target', action.payload)

@@ -9,6 +9,7 @@ import NextPieceContainer from "./NextPieceContainer";
 
 import HTML5Backend from "react-dnd-html5-backend";
 import { DragDropContext } from "react-dnd";
+import TotalScoreBtn from "../display/TotalScoreBtn";
 
 const mapStateToProps = store => ({
   boards: store.game.boards,
@@ -23,7 +24,11 @@ const mapDispatchToProps = dispatch => ({
   },
   chooseStartingPlayer: () => {
     dispatch(actions.chooseStartingPlayer());
+  },
+  tallyScore: () => {
+    dispatch(actions.tallyScore());
   }
+
 });
 
 class App extends Component {
@@ -52,6 +57,7 @@ class App extends Component {
           <CurrContainer />
           <NextContainer />
           <NextPieceContainer />
+          <TotalScoreBtn count = {this.props.tallyScore} />
         </div>
         <div id="boardContainer">
           <Board id='board2' contents={this.props.boards.board2}/>
