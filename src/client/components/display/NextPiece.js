@@ -64,35 +64,19 @@ class NextPiece extends Component {
 
   render() {
     function rotateHandler() {
-      let width, height, flexDirection, order;
+      let width, height, flexDirection, order, inverted;
       this.state.style.width === "102px" ? (width = "52px") : (width = "102px");
-      this.state.style.height === "102px"
-        ? (height = "52px")
-        : (height = "102px");
-      this.state.style.flexDirection === "column"
-        ? (order = [this.state.order[1], this.state.order[0]])
-        : (order = this.state.order);
-      this.state.style.flexDirection === "row"
-        ? (flexDirection = "column")
-        : (flexDirection = "row");
+      this.state.style.height === "102px" ? (height = "52px"): (height = "102px");
+      this.state.style.flexDirection === "column" ? (order = [this.state.order[1], this.state.order[0]]) : (order = this.state.order);
+      this.state.style.flexDirection === "row" ? (flexDirection = "column") : (flexDirection = "row");
       this.props.changeOrientation();
-      this.setState({ style: { height, width, flexDirection }, order });
+      this.setState({ style: { height, width, flexDirection }, order});
     }
     const { isDragging, connectDragSource } = this.props;
     return connectDragSource(
-      <div
-        className="piece"
-        style={this.state.style}
-        onClick={rotateHandler.bind(this)}
-      >
-        <Square
-          id={this.props.contents[0]}
-          contents={DOMINOS[this.props.contents[this.state.order[0]]]}
-        />
-        <Square
-          id={this.props.contents[1]}
-          contents={DOMINOS[this.props.contents[this.state.order[1]]]}
-        />
+      <div className="piece" style={this.state.style} onClick={rotateHandler.bind(this)} >
+        <Square id={this.props.contents[0]} contents={DOMINOS[this.props.contents[this.state.order[0]]]} />
+        <Square id={this.props.contents[1]} contents={DOMINOS[this.props.contents[this.state.order[1]]]} />
       </div>
     );
   }

@@ -1,8 +1,8 @@
 import * as types from './actionTypes';
 
-export const placePiece = target => ({
+export const placePiece = (targetObj) => ({
   type: types.PLACE_PIECE,
-  payload: target,
+  payload: targetObj
 })
 
 export const shufflePieces = pieces => ({

@@ -1,4 +1,5 @@
 import * as types from '../actions/actionTypes';
+import DOMINOS from '../DOMINOS.json'
   
 
 
@@ -7,7 +8,7 @@ const initialState = {
   currPieces: [],
   nextPieces: [],
   currPlayer: '',
-  pieceToPlay: { piece: 0, orientation: 'horizontal' },
+  pieceToPlay: { piece: 0, orientation: 'horizontal', inverted: false },
   message: '',
   boards: {
     board1: [
@@ -38,17 +39,58 @@ const initialState = {
       case types.PLACE_PIECE: {
         console.log('action', action);
         console.log('target', action.payload)
-        const payload = action.payload.split('-');
-        const board = payload[0];
-        const square = payload[1];
+        const target = action.payload.target.split('-');
+        const id = action.payload.id;
+        const board = target[0];
+        const square = Number(target[1]);
 
-        const newBoard = JSON.parse(JSON.stringify(state.boards));
+        const newBoards = JSON.parse(JSON.stringify(state.boards));
+        let toUpdate;
+        if (state.pieceToPlay.orientation === 'horizontal' && (square % 7 < 6) && (square < 23 || square > 24)) {
+          toUpdate = [square, square + 1]
+        } else if (state.pieceToPlay.orientation === 'vertical' && square < 42 && square !== 24 && square != 17) {
+          toUpdate = [square, square + 7]
+        } else alert('Invalid Move');
+
+        let newSquares;
+        state.pieceToPlay.inverted ? newSquares = [`${id}b`, `${id}a`] : newSquares = [`${id}a`, `${id}b`]
+        const colors = [DOMINOS[newSquares[0]].color, DOMINOS[newSquares[1]].color];
+        console.log(colors);
+        console.log(newSquares, toUpdate)
         
+        let pieceToPlay = JSON.parse(JSON.stringify(state.pieceToPlay));
+
+        function colorMatch(brd, pc, clr) {
+          let isMatch = [false, false, false, false];
+          if (pc % 7 > 0 && newBoards[brd][pc - 1].color) {
+            if (newBoards[brd][pc - 1].color === clr || newBoards[brd][pc - 1].color === 'black') isMatch[0] = true;
+          }
+          if (pc % 7 < 6 && newBoards[brd][pc + 1].color) {
+            if (newBoards[brd][pc + 1].color === clr || newBoards[brd][pc + 1].color === 'black') isMatch[1] = true;
+          }
+          if (pc > 6 && newBoards[brd][pc - 7].color) {
+            if (newBoards[brd][pc - 7].color === clr || newBoards[brd][pc - 7].color === 'black') isMatch[2] = true;
+          }
+          if (pc < 41 && newBoards[brd][pc + 7].color) {
+            if (newBoards[brd][pc + 7].color === clr || newBoards[brd][pc + 7].color === 'black') isMatch[3] = true;
+          }
+          return (isMatch.includes(true)) ? true : false;
+        }
+
+        if (!newBoards[board][toUpdate[0]].color && 
+            !newBoards[board][toUpdate[1]].color && 
+            (colorMatch(board, toUpdate[0], colors[0]) || colorMatch(board, toUpdate[1], colors[1]))) {
+          newBoards[board][toUpdate[0]] = DOMINOS[newSquares[0]];
+          newBoards[board][toUpdate[1]] = DOMINOS[newSquares[1]];
+          pieceToPlay = { piece: 0, orientation: 'horizontal', inverted: false }
+        } else alert('Invalid Move')
+
 
 
         return {
           ...state,
-          // board: newBoard,
+          boards: newBoards,
+          pieceToPlay: pieceToPlay
         }
       }
 
@@ -117,7 +159,7 @@ const initialState = {
         console.log('action', action);
 
         let pieceToPlay = JSON.parse(JSON.stringify(state.pieceToPlay));
-        pieceToPlay.orientation === 'horizontal' ? pieceToPlay.orientation = 'vertical' : pieceToPlay.orientation = 'horizontal';
+        pieceToPlay.orientation === 'vertical' ? (pieceToPlay.orientation = 'horizontal', pieceToPlay.inverted = !pieceToPlay.inverted) : pieceToPlay.orientation = 'vertical';
 
         return {
           ...state,

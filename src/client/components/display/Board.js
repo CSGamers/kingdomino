@@ -41,14 +41,15 @@ const boardSquareTarget = {
     // Obtain the dragged item and coordinates to where to be dropped
     const item = monitor.getItem();
     console.log('item', item)
+    const id = item.id.slice(1);
+    console.log(id)
     let coord = monitor.getClientOffset();
     let target = document.elementFromPoint(coord.x, coord.y).id;
+
     console.log(target);
-    props.placePiece(target);
-    // console.log(
-    //   "THIS IS TARGET ELEMENT? ",
-    //   document.elementFromPoint(coord.x, coord.y)
-    // );
+    let obj = { target, id }
+    props.placePiece(obj);
+
     return { moved: true, coord: coord, item: item };
   }
 };
