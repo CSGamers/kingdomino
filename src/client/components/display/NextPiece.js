@@ -74,7 +74,7 @@ class NextPiece extends Component {
     }
     const { isDragging, connectDragSource } = this.props;
     return connectDragSource(
-      <div className="piece" style={this.state.style} onClick={rotateHandler.bind(this)} >
+      <div className="nextPiece" style={this.state.style} onClick={rotateHandler.bind(this)} >
         <Square id={this.props.contents[0]} contents={DOMINOS[this.props.contents[this.state.order[0]]]} />
         <Square id={this.props.contents[1]} contents={DOMINOS[this.props.contents[this.state.order[1]]]} />
       </div>

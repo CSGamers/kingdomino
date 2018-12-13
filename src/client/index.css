@@ -1,3 +1,17 @@
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+}
+
 .square {
   width: 50px;
   height: 50px;
@@ -19,15 +33,17 @@
   width: 20px;
 }
 
-.piece {
+.piece, .nextPiece {
   width: 102px;
   height: 52px;
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  background-color: aquamarine;
+  margin-bottom: 3px;
+  background-color:black;
   border: 1px solid black;
 }
+
 #app {
   display: grid;
   grid-template-columns: repeat(3, 33.33%);
@@ -36,22 +52,67 @@
 }
 
 .controls {
+  border: red 1px solid;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
+.logo {
+  margin: auto;
+}
+
+.activePiecesContainer {
+  border: blue 1px solid;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  margin-top: -5px;
+}
+
+.nextPiece {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+.nextPieceContainer {
+  text-align: center;
+  justify-content: center;
+  font-size: .8rem;
+  height: 110px;
+  width: 100%;
+}
+
 .currContainer,
 .nextContainer {
-  width: 50%;
+  border: lime 1px solid;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  height: 300px;
+}
+
+.message {
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  animation: 200ms zoomIn ease-in;
+  
 }
 
 .boardBox {
   text-align: center;
+  padding-top: 50px;
+}
+
+.pieces {
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .kingContainer {
@@ -70,4 +131,15 @@
 
 #next4Btn, #queuePieceBtn {
   margin-top: 10px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color: white;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
 }

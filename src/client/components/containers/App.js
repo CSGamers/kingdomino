@@ -6,10 +6,13 @@ import * as actions from "../../actions/actions";
 import CurrContainer from "../containers/CurrContainer";
 import NextContainer from "../containers/NextContainer";
 import NextPieceContainer from "./NextPieceContainer";
+import logo from '../../assets/img/kingdomino.png'
 
 import HTML5Backend from "react-dnd-html5-backend";
 import { DragDropContext } from "react-dnd";
 import TotalScoreBtn from "../display/TotalScoreBtn";
+import ActivePiecesContainer from "./ActivePiecesContainer";
+import Message from "../display/Message";
 
 const mapStateToProps = store => ({
   boards: store.game.boards,
@@ -54,10 +57,11 @@ class App extends Component {
           </div>
         </div> 
         <div className="controls">
-          <CurrContainer />
-          <NextContainer />
+          <img className="logo" src={logo} />  
+          <Message />
+          <ActivePiecesContainer />
           <NextPieceContainer />
-          <TotalScoreBtn count = {this.props.tallyScore} />
+          {/* <TotalScoreBtn count = {this.props.tallyScore} /> */}
         </div>
         <div id="boardContainer">
           <Board id='board2' contents={this.props.boards.board2}/>

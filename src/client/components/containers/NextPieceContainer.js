@@ -30,9 +30,8 @@ class NextPieceContainer extends Component {
       );
 
     return (
-      <div>
-        <h2>Piece to Play</h2>
-        <h3>Player: {this.props.currentPlayer}</h3>
+      <div className = "nextPieceContainer">
+        <i>click to rotate</i>
         {piece}
       </div>
     );

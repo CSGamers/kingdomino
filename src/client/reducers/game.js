@@ -9,7 +9,7 @@ const initialState = {
   nextPieces: [],
   currPlayer: '',
   pieceToPlay: { piece: 0, orientation: 'horizontal', inverted: false },
-  message: '',
+  message: `Click Start to Begin`,
   boards: {
     board1: [
       {}, {}, {}, {}, {}, {}, {},
@@ -40,8 +40,6 @@ const initialState = {
         console.log('action', action);
 
         const newBoards = JSON.parse(JSON.stringify(state.boards));
-
-        
 
         function tallyBoardScore(board) {
           let total = 0;
@@ -121,8 +119,8 @@ const initialState = {
         let newSquares;
         state.pieceToPlay.inverted ? newSquares = [`${id}b`, `${id}a`] : newSquares = [`${id}a`, `${id}b`]
         const colors = [DOMINOS[newSquares[0]].color, DOMINOS[newSquares[1]].color];
-        console.log(colors);
-        console.log(newSquares, toUpdate)
+        // console.log(colors);
+        // console.log(newSquares, toUpdate)
         
         let pieceToPlay = JSON.parse(JSON.stringify(state.pieceToPlay));
 
