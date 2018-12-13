@@ -94,6 +94,7 @@ const initialState = {
         else winner = 'PLAYER 2 WINS';
 
         console.log(winner);
+        alert(winner);
 
         return {
           ...state,

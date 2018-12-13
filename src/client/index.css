@@ -66,6 +66,12 @@
   margin: auto;
 }
 
+#totalScoreBtn {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
 .activePiecesContainer {
   /* border: blue 1px solid; */
   width: 100%;

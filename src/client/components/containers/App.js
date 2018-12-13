@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Board from '../display/Board';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/actions';
-import CurrContainer from '../containers/CurrContainer';
-import NextContainer from '../containers/NextContainer';
 import NextPieceContainer from './NextPieceContainer';
 import LandingPage from './LandingPage';
 import King from "../display/King";
@@ -58,11 +56,12 @@ class App extends Component {
     let btn;
     console.log(this.props.message)
     if (this.props.message === 'Click Start to Begin') btn = <StartBtn start={ startGame.bind(this) }/>
+    else btn = <TotalScoreBtn count={ this.props.tallyScore } />
 
     return (
       <div>
-        {this.props.isAuthenticated === false ?
-          <LandingPage /> :
+        {/* {this.props.isAuthenticated === false ?
+          <LandingPage /> : */}
           <div id='app'>
             <div id="boardContainer">
               <Board id='board1' contents={this.props.boards.board1} />
@@ -86,7 +85,7 @@ class App extends Component {
               </div>
             </div>
           </div>
-        }
+        {/* } */}
       </div>
     );
   }
