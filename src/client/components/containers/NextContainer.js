@@ -41,7 +41,9 @@ class NextContainer extends Component {
     return (
       <div className="nextContainer">
         <h2>Next Pieces</h2>
-        {next4}
+        <div className="pieces">
+         {next4}
+        </div>
         <Next4Btn dealPieces={dealPieces.bind(this)} />
       </div>
     );

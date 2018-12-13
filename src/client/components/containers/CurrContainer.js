@@ -33,7 +33,9 @@ class CurrContainer extends Component {
     return (
       <div className="currContainer">
         <h2>Current Pieces</h2>
-        {curr4}
+        <div className="pieces">
+         {curr4}
+        </div>
         <QueuePieceBtn queuePiece={this.props.queuePiece} />
       </div>
     );
