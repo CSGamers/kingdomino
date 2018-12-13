@@ -17,9 +17,11 @@ class Piece extends Component {
   }
 
   render() {
-
+      let id = this.props.contents[0].split('');
+      id.pop();
+      id = id.join('')
       return (
-      <div className="piece">
+      <div className="piece" id={id}>
         <Square
           id={this.props.contents[0]}
           contents={DOMINOS[this.props.contents[0]]}

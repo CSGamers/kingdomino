@@ -20,8 +20,8 @@ export const populateCurr = nextPieces => ({
   payload: nextPieces
 })
 
-export const queuePiece = pieceToPlay => ({
-  type: types.QUEUE_PIECE,
+export const skipPiece = pieceToPlay => ({
+  type: types.SKIP_PIECE,
   payload: pieceToPlay
 })
 

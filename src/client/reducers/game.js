@@ -1,5 +1,6 @@
 import * as types from '../actions/actionTypes';
 import DOMINOS from '../DOMINOS.json'
+import { chooseStartingPlayer } from '../actions/actions';
   
 
 
@@ -149,12 +150,19 @@ const initialState = {
           pieceToPlay = { piece: 0, orientation: 'horizontal', inverted: false }
         } else alert('Invalid Move')
 
+        let player;
+        if (state.currPlayer === 1) player = 2;
+        else player = 1;
+
+        let message = `Player ${player} - It\'s Your Turn`;
 
 
         return {
           ...state,
           boards: newBoards,
-          pieceToPlay: pieceToPlay
+          pieceToPlay: pieceToPlay,
+          currPlayer: player,
+          message: message
         }
       }
 
@@ -205,17 +213,24 @@ const initialState = {
         }
       }
 
-      case types.QUEUE_PIECE: {
+      case types.SKIP_PIECE: {
         console.log('action', action);
 
         let currPieces = state.currPieces.slice();
         let pieceToPlay = JSON.parse(JSON.stringify(state.pieceToPlay));
         pieceToPlay.piece = currPieces.shift();
+        let player;
+        if (state.currPlayer === 1) player = 2;
+        else player = 1;  
+
+        let message = `Player ${player} - It\'s Your Turn`;
 
         return {
           ...state,
           currPieces: currPieces,
-          pieceToPlay: pieceToPlay
+          pieceToPlay: pieceToPlay,
+          currPlayer: chooseStartingPlayer,
+          message: message,
         }
       }
 
@@ -234,10 +249,12 @@ const initialState = {
       case types.CHOOSE_STARTING_PLAYER: {
         console.log('action', action);
         let rand = Math.floor(Math.random() * Math.floor(2) + 1);
+        let message = `Player ${rand} - It\'s Your Turn`
 
         return {
           ...state,
           currPlayer: rand,
+          message: message,
         }
       }
 
