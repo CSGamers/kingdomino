@@ -55,13 +55,15 @@ class App extends Component {
 
     let btn;
     console.log(this.props.message)
-    if (this.props.message === 'Click Start to Begin') btn = <StartBtn start={ startGame.bind(this) }/>
-    else btn = <TotalScoreBtn count={ this.props.tallyScore } />
+    if (this.props.message === 'Click Start to Begin') btn = <StartBtn start={startGame.bind(this)} />
+    else btn = <TotalScoreBtn count={this.props.tallyScore} />
 
     return (
       <div>
-        {/* {this.props.isAuthenticated === false ?
-          <LandingPage /> : */}
+        {this.props.isAuthenticated === false ?
+          <div id='landing-page'>
+            <LandingPage logo={logo} />
+          </div> :
           <div id='app'>
             <div id="boardContainer">
               <Board id='board1' contents={this.props.boards.board1} />
@@ -85,7 +87,7 @@ class App extends Component {
               </div>
             </div>
           </div>
-        {/* } */}
+        }
       </div>
     );
   }
@@ -95,3 +97,4 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(App);
+
